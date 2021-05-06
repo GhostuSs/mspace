@@ -1,6 +1,6 @@
 import 'package:enroll_spb_luxury/constants/colorsPallette.dart';
 import 'package:enroll_spb_luxury/data/passData.dart';
-import 'package:enroll_spb_luxury/screens/addNameScreen.dart';
+import 'package:enroll_spb_luxury/screens/insertuserdata/addNameScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
