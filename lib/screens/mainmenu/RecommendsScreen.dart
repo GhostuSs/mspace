@@ -22,3 +22,6 @@ class _RecommendsScreen extends State<RecommendsScreen>{
   }
 
 }
+/*void main(){
+  runApp(RecommendsScreen());
+}*/

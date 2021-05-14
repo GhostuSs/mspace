@@ -37,15 +37,15 @@ class _TrainingScreen extends State<TrainingScreen>{
                     Padding(
                         padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
                         child:
-                        buildButton('решать рекомендации', '/recommends')),
+                        buildButton('решать рекомендации', "/recommends")),
                     Padding(
                         padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
                         child:
-                        buildButton('архив задач', '/recommends')),
+                        buildButton('архив задач', "/recommends")),
                     Padding(
                         padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
                         child:
-                        buildButton('вступительный вариант', '/recommends')),
+                        buildButton('вступительный вариант', "/recommends")),
                   ],
                 ),
               )
@@ -54,14 +54,14 @@ class _TrainingScreen extends State<TrainingScreen>{
         ),
     );
   }
-Widget buildButton(String btnText,String route){
+Widget buildButton(String btnText,route){
   return Container(
     height: 50,
     width: double.infinity,
     child: ElevatedButton(
         onPressed: (){
           setState(() {
-            Navigator.pushNamed(context, "$route");
+            Navigator.pushNamed(context, route);
           });
         },
         child: Text(
@@ -83,8 +83,4 @@ Widget buildButton(String btnText,String route){
             ))),
   );
 }
-}
-
-void main(){
-  runApp(TrainingScreen());
 }

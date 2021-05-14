@@ -7,6 +7,7 @@ import 'package:enroll_spb_luxury/screens/insertuserdata/chooseSchoolsScreen.dar
 import 'package:enroll_spb_luxury/screens/auth/signInScreen.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/RecommendsScreen.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/States.dart';
+import 'package:enroll_spb_luxury/screens/mainmenu/profile/editProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +21,7 @@ void main() {
         Provider<User>(create: (_) => User()),
       ],
       child:MaterialApp(
-        initialRoute: "/auth",
+        initialRoute: '/auth',
         routes: {
           "/auth": (BuildContext context) => AuthScreen(),
           "/signup": (BuildContext context) => SignUpScreen(),
@@ -31,6 +32,7 @@ void main() {
           "/info": (BuildContext context) => MainMenuScreen(),
           "/states": (BuildContext context) => StatesScreen(),
           "/recommends": (BuildContext context) => RecommendsScreen(),
+          "/editprofile": (BuildContext context) => EditProfileScreen(),
         },
       ),
     )
