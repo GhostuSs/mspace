@@ -11,6 +11,7 @@ import 'package:enroll_spb_luxury/screens/mainmenu/States.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/profile/editProfile.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/training/TrainingScreen.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/training/Recommends/fullAnswerScreen.dart';
+import 'package:enroll_spb_luxury/screens/mainmenu/training/archiveOfExercises/listExcercisesScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -34,13 +35,14 @@ void main() {
           "/enrollclass": (BuildContext context) => ChooseEnrollClassScreen(),
           "/chooseschools": (BuildContext context) => ChooseSchoolsScreen(),
           "/info": (BuildContext context) => MainMenuScreen(),
-          "/states": (BuildContext context) => StatesScreen(),
+          "/states": (BuildContext cotext) => StatesScreen(),
           "/recommend": (BuildContext context) => RecommendsScreen(),
           '/editprofile': (BuildContext context) => EditProfileScreen(),
           "/profile": (BuildContext context) => ProfileScreen(),
           "/answer": (BuildContext context) => AnswerScreen(),
           "/training":(BuildContext context) => TrainingScreen(),
           "/fullanswer":(BuildContext context) => FullAnswerScreen(),
+          "/archive":(BuildContext context) => ExcercisesScreen(),
 
         },
       ),

@@ -72,7 +72,7 @@ class _TrainingScreen extends State<TrainingScreen>{
                           child: ElevatedButton(
                               onPressed: (){
                                 setState(() {
-                                  Navigator.pushNamed(context,'/recommend');
+                                  Navigator.pushNamed(context,'/archive');
                                 });
                               },
                               child: Text(

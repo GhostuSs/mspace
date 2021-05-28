@@ -13,7 +13,7 @@ class AnswerScreen extends StatefulWidget{
 }
 
 class _AnswerScreen extends State<AnswerScreen>{
-  bool status = false;
+  bool status = true;
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -48,7 +48,7 @@ class _AnswerScreen extends State<AnswerScreen>{
                         fontFamily: 'Formular',
                         fontWeight: FontWeight.bold,
                         color: Color(0xFF33D924),
-                        fontSize: 30
+                        fontSize: 20
                     )
                 ) : Text('Неправильный',
                     style: TextStyle(
@@ -95,7 +95,7 @@ class _AnswerScreen extends State<AnswerScreen>{
                   child: ElevatedButton(
                       onPressed: (){
                         setState(() {
-                          Navigator.push(context,MaterialPageRoute(builder: (BuildContext context){return AnswerScreen();}));
+                          Navigator.pushNamed(context,'/recommend');
                         });
                       },
                       child: Text(
