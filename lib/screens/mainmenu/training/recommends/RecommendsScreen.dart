@@ -1,8 +1,9 @@
+import 'package:enroll_spb_luxury/components/answerScreen.dart';
 import 'package:enroll_spb_luxury/components/modalSheet.dart';
 import 'package:enroll_spb_luxury/constants/colorsPallette.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:provider/provider.dart';
 
 class RecommendsScreen extends StatefulWidget{
   @override
@@ -11,9 +12,9 @@ class RecommendsScreen extends StatefulWidget{
   }
 }
 class _RecommendsScreen extends State<RecommendsScreen>{
-  var textFieldController;
+  var textFieldController = TextEditingController();
   String _answer;
-  String _correct="";
+  String _correct="aa";
   String exercise = "С января по июнь 46200 иммигрантов подали на гражданство. А в прошлом году за этот же период заявки подали 120000 иммигрантов. На сколько процентов уменьшилось количество заявок? В ответе укажите только число.";
   @override
   Widget build(BuildContext context) {
@@ -93,15 +94,13 @@ class _RecommendsScreen extends State<RecommendsScreen>{
                 ),
               ),
               Padding(
-                  padding: EdgeInsets.fromLTRB(20,20,0,0),
+                  padding: EdgeInsets.fromLTRB(20,20,20,0),
                   child: TextField(
                     controller: textFieldController,
                     autofocus: true,
-                    onEditingComplete: (){
-                      setState(() {
+                    onChanged: (str){
                         _answer=textFieldController.text;
-                      });
-                    },
+                      }
                   )
               ),
               Padding(
@@ -112,7 +111,7 @@ class _RecommendsScreen extends State<RecommendsScreen>{
                 child: ElevatedButton(
                     onPressed: (){
                       setState(() {
-                        _answer==_correct ? Navigator.pushNamed(context,'/auth') :Text('');
+                        Navigator.pushNamed(context,'/answer');
                       });
                     },
                     child: Text(
@@ -144,7 +143,4 @@ class _RecommendsScreen extends State<RecommendsScreen>{
       )
     );
   }
-}
-void main(){
-  runApp(MaterialApp(home: RecommendsScreen()));
 }

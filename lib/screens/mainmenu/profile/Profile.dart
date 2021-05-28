@@ -133,6 +133,3 @@ class _ProfileScreen extends State<ProfileScreen>{
   }
 
 }
-void main(){
-  runApp(MaterialApp(home: ProfileScreen()));
-}

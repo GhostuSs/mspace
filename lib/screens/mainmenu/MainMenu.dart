@@ -1,10 +1,8 @@
 import 'package:enroll_spb_luxury/constants/colorsPallette.dart';
-import 'package:enroll_spb_luxury/data/passData.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/profile/Profile.dart';
-import 'package:enroll_spb_luxury/screens/mainmenu/TrainingScreen.dart';
+import 'package:enroll_spb_luxury/screens/mainmenu/training/TrainingScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import 'States.dart';
 
@@ -18,14 +16,14 @@ class MainMenuScreen extends StatefulWidget{
 class _MainMenuScreen extends State<MainMenuScreen>{
   @override
   Widget build(BuildContext context) {
-    List _pages = [
+    List _routes = [
       StatesScreen(),
       Text('SOON'),
       TrainingScreen(),
       Text('SOON'),
       ProfileScreen()
     ];
-    return MaterialApp(home: CupertinoPageScaffold(
+    return CupertinoPageScaffold(
       child: CupertinoTabScaffold(
         tabBar: CupertinoTabBar(
           items: [
@@ -65,14 +63,10 @@ class _MainMenuScreen extends State<MainMenuScreen>{
             ),//Профиль
           ],
         ),
+        // ignore: missing_return
         tabBuilder: (BuildContext context,index){
-          return _pages[index];
+              return _routes[index];
         },
-      ),
-    ));
+      ));
   }
-}
-
-void main(){
-  runApp(MainMenuScreen());
 }

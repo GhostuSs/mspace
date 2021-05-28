@@ -5,12 +5,16 @@ import 'package:enroll_spb_luxury/screens/insertuserdata/chooseClassScreen.dart'
 import 'package:enroll_spb_luxury/screens/insertuserdata/chooseEnrollClassScreen.dart';
 import 'package:enroll_spb_luxury/screens/insertuserdata/chooseSchoolsScreen.dart';
 import 'package:enroll_spb_luxury/screens/auth/signInScreen.dart';
-import 'package:enroll_spb_luxury/screens/mainmenu/RecommendsScreen.dart';
+import 'package:enroll_spb_luxury/screens/mainmenu/profile/Profile.dart';
+import 'package:enroll_spb_luxury/screens/mainmenu/training/Recommends/RecommendsScreen.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/States.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/profile/editProfile.dart';
+import 'package:enroll_spb_luxury/screens/mainmenu/training/TrainingScreen.dart';
+import 'package:enroll_spb_luxury/screens/mainmenu/training/Recommends/fullAnswerScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'components/answerScreen.dart';
 import 'data/passData.dart';
 
 
@@ -31,8 +35,13 @@ void main() {
           "/chooseschools": (BuildContext context) => ChooseSchoolsScreen(),
           "/info": (BuildContext context) => MainMenuScreen(),
           "/states": (BuildContext context) => StatesScreen(),
-          "/recommends": (BuildContext context) => RecommendsScreen(),
-          "/editprofile": (BuildContext context) => EditProfileScreen(),
+          "/recommend": (BuildContext context) => RecommendsScreen(),
+          '/editprofile': (BuildContext context) => EditProfileScreen(),
+          "/profile": (BuildContext context) => ProfileScreen(),
+          "/answer": (BuildContext context) => AnswerScreen(),
+          "/training":(BuildContext context) => TrainingScreen(),
+          "/fullanswer":(BuildContext context) => FullAnswerScreen(),
+
         },
       ),
     )
