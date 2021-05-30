@@ -43,6 +43,8 @@ void main() {
           "/training":(BuildContext context) => TrainingScreen(),
           "/fullanswer":(BuildContext context) => FullAnswerScreen(),
           "/archive":(BuildContext context) => ExcercisesScreen(),
+          "/filterclass":(BuildContext context) => ClassFilterScreen(),
+          "/filtertheme":(BuildContext context) => ThemeFilterScreen(),
 
         },
       ),
