@@ -37,7 +37,7 @@ void main() {
           "/enrollclass": (BuildContext context) => ChooseEnrollClassScreen(),
           "/chooseschools": (BuildContext context) => ChooseSchoolsScreen(),
           "/info": (BuildContext context) => MainMenuScreen(),
-          "/states": (BuildContext cotext) => StatesScreen(),
+          "/states": (BuildContext context) => StatesScreen(),
           "/recommend": (BuildContext context) => RecommendsScreen(),
           '/editprofile': (BuildContext context) => EditProfileScreen(),
           "/profile": (BuildContext context) => ProfileScreen(),
