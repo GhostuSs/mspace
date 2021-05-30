@@ -11,6 +11,8 @@ import 'package:enroll_spb_luxury/screens/mainmenu/States.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/profile/editProfile.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/training/TrainingScreen.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/training/Recommends/fullAnswerScreen.dart';
+import 'package:enroll_spb_luxury/screens/mainmenu/training/archiveOfExercises/filters/classFilter.dart';
+import 'package:enroll_spb_luxury/screens/mainmenu/training/archiveOfExercises/filters/themeFilter.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/training/archiveOfExercises/listExcercisesScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
