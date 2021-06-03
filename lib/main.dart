@@ -7,7 +7,7 @@ import 'package:enroll_spb_luxury/screens/insertuserdata/chooseSchoolsScreen.dar
 import 'package:enroll_spb_luxury/screens/auth/signInScreen.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/profile/Profile.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/training/Recommends/RecommendsScreen.dart';
-import 'package:enroll_spb_luxury/screens/mainmenu/States.dart';
+import 'package:enroll_spb_luxury/screens/mainmenu/states/States.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/profile/editProfile.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/training/TrainingScreen.dart';
 import 'package:enroll_spb_luxury/screens/mainmenu/training/Recommends/fullAnswerScreen.dart';
