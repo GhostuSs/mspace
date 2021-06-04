@@ -1,8 +1,7 @@
-import 'package:enroll_spb_luxury/components/answerScreen.dart';
+import 'package:catex/catex.dart';
 import 'package:enroll_spb_luxury/constants/colorsPallette.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:catex/catex.dart';
 
 class FullAnswerScreen extends StatefulWidget{
   @override

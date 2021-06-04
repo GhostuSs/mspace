@@ -1,5 +1,4 @@
 import 'package:enroll_spb_luxury/constants/colorsPallette.dart';
-import 'package:enroll_spb_luxury/screens/mainmenu/training/Recommends/fullAnswerScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

@@ -15,6 +15,7 @@ class _ExcersisesScreen extends State<ExcercisesScreen>{
   Widget build(BuildContext context) {
     const label = "Поиск";
     const dummyList = ['1111'];
+    var height = MediaQuery.of(context).size.height;
     TextEditingController myController = TextEditingController();
     return Scaffold(
       body: Padding(
@@ -67,7 +68,7 @@ class _ExcersisesScreen extends State<ExcercisesScreen>{
               child: ListView.builder(
                 itemCount: 6,
                   itemBuilder: (BuildContext context,index){
-                  return Padding(padding: EdgeInsets.only(bottom: 5.0),child: Container(
+                  return Padding(padding: EdgeInsets.only(bottom: 15.0),child: Container(
                     width: double.infinity,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -154,9 +155,9 @@ class _ExcersisesScreen extends State<ExcercisesScreen>{
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3), // changes position of shadow
+                          spreadRadius: 1,
+                          blurRadius: 2.5,
+                          offset: Offset(-1, 0), // changes position of shadow
                         ),
 
                       ],

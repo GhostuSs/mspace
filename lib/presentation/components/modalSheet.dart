@@ -92,7 +92,7 @@ class ModalTrigger extends StatelessWidget {
                   _showModalBottomSheet(context);
               },
               child: Text(
-                  'подсказка'.toUpperCase(),
+                  'Подсказка',
                   style: TextStyle(
                       fontSize: 16,
                       color: kPersonalWhite,

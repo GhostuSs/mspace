@@ -1,9 +1,7 @@
-import 'package:enroll_spb_luxury/components/answerScreen.dart';
-import 'package:enroll_spb_luxury/components/modalSheet.dart';
 import 'package:enroll_spb_luxury/constants/colorsPallette.dart';
+import 'package:enroll_spb_luxury/presentation/components/modalSheet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class RecommendsScreen extends StatefulWidget{
   @override
@@ -18,11 +16,12 @@ class _RecommendsScreen extends State<RecommendsScreen>{
   String exercise = "С января по июнь 46200 иммигрантов подали на гражданство. А в прошлом году за этот же период заявки подали 120000 иммигрантов. На сколько процентов уменьшилось количество заявок? В ответе укажите только число.";
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(0 ,MediaQuery.of(context).size.height*0.1 ,0 ,0),
+            padding: EdgeInsets.fromLTRB(0 , height*0.1,0 ,0),
             child: Column(children: [
               Padding(
                   padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
@@ -85,16 +84,16 @@ class _RecommendsScreen extends State<RecommendsScreen>{
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: Offset(0, 3), // changes position of shadow
+                      spreadRadius: 2,
+                      blurRadius: 2.5,
+                      offset: Offset(-1, 0), // changes position of shadow
                     ),
 
                   ],
                 ),
               ),
               Padding(
-                  padding: EdgeInsets.fromLTRB(20,20,20,0),
+                  padding: EdgeInsets.all(20),
                   child: TextField(
                     controller: textFieldController,
                     autofocus: true,
@@ -115,7 +114,7 @@ class _RecommendsScreen extends State<RecommendsScreen>{
                       });
                     },
                     child: Text(
-                        'проверить'.toUpperCase(),
+                        'Проверить',
                         style: TextStyle(
                             fontSize: 16,
                             color: kPersonalWhite,

@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:enroll_spb_luxury/constants/colorsPallette.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class ClassFilterScreen extends StatefulWidget{
   @override

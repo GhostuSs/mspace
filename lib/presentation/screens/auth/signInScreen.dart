@@ -24,25 +24,33 @@ class _SignUpScreen extends State<SignUpScreen>{
         child: Center(child:
         Column(
           children: [
-            Padding(padding: EdgeInsets.fromLTRB(left-10, 0, right, 0),child: Row(mainAxisAlignment: MainAxisAlignment.start,children: [IconButton(icon: Icon(Icons.arrow_back_ios_outlined),
-                color: kPersonalBlue,
-                onPressed:(){setState(() {
-                  Navigator.pop(context);
-                });})],)),
-            Padding(padding: EdgeInsets.fromLTRB(left, 0, right, 60),child: Row(mainAxisAlignment: MainAxisAlignment.start,children: [Text(
-                'M-space',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Formular',
-                    fontSize: 30,
-                    decoration: TextDecoration.underline,
-                    decorationStyle: TextDecorationStyle.solid)
-            )])),
+            Stack(children:
+            [
+              Align(alignment: Alignment.centerLeft,child: IconButton(
+                  icon: Icon(Icons.arrow_back_ios_outlined,size: 30),
+                  color: kPersonalBlue,
+                  onPressed:(){
+                    setState(() {
+                      Navigator.pop(context);
+                    });
+                  }
+              ),),
+              Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                  'M-space',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Formular',
+                      fontSize: 30,
+                      decoration: TextDecoration.underline)
+              ))]
+        ),
             Padding(padding: EdgeInsets.fromLTRB(left, 40, right, 50),child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Введите логин и пароль",
+                  "Регистрация",
                   style: TextStyle(
                       color: kPersonalBlack,
                       fontSize: 22,
@@ -51,9 +59,15 @@ class _SignUpScreen extends State<SignUpScreen>{
                   )
                   ,
                 )],)),
-            Padding(padding: EdgeInsets.fromLTRB(left, 0, right, 20),child:buildloginTextField()),
-            Padding(padding: EdgeInsets.fromLTRB(left, 0, right, 10),child:buildPasswordTextField()),
-            Padding(padding: EdgeInsets.fromLTRB(left,40,right,20),child: Container(
+            Padding(
+                padding: EdgeInsets.fromLTRB(left, 0, right, 20),
+                child:buildloginTextField()),
+            Padding(
+                padding: EdgeInsets.fromLTRB(left, 0, right, 10),
+                child:buildPasswordTextField()),
+            Padding(
+              padding: EdgeInsets.fromLTRB(left,40,right,20),
+              child: Container(
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
@@ -73,7 +87,7 @@ class _SignUpScreen extends State<SignUpScreen>{
                   });
                 },
                   child: Text(
-                      "зарегистрироваться".toUpperCase(),
+                      "Зарегистрироваться",
                       style: TextStyle(
                           fontSize: 16,
                         color: kPersonalWhite,

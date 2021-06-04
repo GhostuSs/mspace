@@ -1,17 +1,18 @@
-import 'package:flutter/material.dart';
 import 'package:enroll_spb_luxury/constants/colorsPallette.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class ClassFilterScreen extends StatefulWidget{
+class ThemeFilterScreen extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    return _ClassFilterScreen();
+    return _ThemeFilterScreen();
   }
 }
-class _ClassFilterScreen extends State<ClassFilterScreen>{
+class _ThemeFilterScreen extends State<ThemeFilterScreen>{
 
   var _selectedItems = List<int>();
-  var _colors = List.generate(11, (index) => 0);
+  var _colors = List.generate(6, (index) => 0);
+  var _themes = ['Комбинаторика','Вычисления','Квадратные уравнения','Дроби','Анализ числа','Логика'];
   @override
 
   @override
@@ -30,7 +31,7 @@ class _ClassFilterScreen extends State<ClassFilterScreen>{
                       Navigator.pushNamed(context, '/info');
                     });}),
                     Align(alignment: Alignment.center,child: Text(
-                      'Класс',
+                      'Тема',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -84,39 +85,39 @@ class _ClassFilterScreen extends State<ClassFilterScreen>{
   }
   Widget buildSchoolsList(List<int> _selectedItems, List<int> _colors){
     return Container(
-          height: MediaQuery.of(context).size.height*0.6,
-          child: Center(child: ListView.builder(
-              itemCount: 11,
-              itemBuilder: (BuildContext context,index){
-                return ListTile(
-                  minLeadingWidth: 3,
-                  leading: _selectedItems.contains(index) ? Padding(padding: EdgeInsets.fromLTRB(0, 4, 0, 6),child: Icon(Icons.circle,size: 10,color: kPersonalBlue)) : Text(""),
-                  title: Text(
-                      "${index+1}",
-                      style: TextStyle(
-                          fontFamily: 'Formular',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                          color: _colors[index]==1 ? kPersonalBlue : kPersonalBlack.withOpacity(0.4)
-                      )
-                  ),
-                  onTap: (){
-                    setState(() {
-                      _colors[index]==0 ? _colors[index]=1 : _colors[index]=0;
-                      if(! _selectedItems.contains(index)){
-                        _selectedItems.add(index);
-                      } else {
-                        _selectedItems.removeWhere((val) => val == index);
-                      }
-                      print(_selectedItems);
-                    });
-                  },
+      height: MediaQuery.of(context).size.height*0.6,
+      child: Center(child: ListView.builder(
+          itemCount:6,
+          itemBuilder: (BuildContext context,index){
+            return ListTile(
+              minLeadingWidth: 3,
+              leading: _selectedItems.contains(index) ? Padding(padding: EdgeInsets.fromLTRB(0, 4, 0, 6),child: Icon(Icons.circle,size: 10,color: kPersonalBlue)) : Text(""),
+              title: Text(
+                  "${_themes[index]}",
+                  style: TextStyle(
+                      fontFamily: 'Formular',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: _colors[index]==1 ? kPersonalBlue : kPersonalBlack.withOpacity(0.4)
+                  )
+              ),
+              onTap: (){
+                setState(() {
+                  _colors[index]==0 ? _colors[index]=1 : _colors[index]=0;
+                  if(! _selectedItems.contains(index)){
+                    _selectedItems.add(index);
+                  } else {
+                    _selectedItems.removeWhere((val) => val == index);
+                  }
+                  print(_selectedItems);
+                });
+              },
 
-                );
-              })),
-        );
+            );
+          })),
+    );
   }
 }
 void main(){
-  runApp(MaterialApp(home: ClassFilterScreen()));
+  runApp(MaterialApp(home: ThemeFilterScreen()));
 }
