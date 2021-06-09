@@ -2,13 +2,13 @@ import 'package:enroll_spb_luxury/constants/colorsPallette.dart';
 import 'package:flutter/material.dart';
 
 class ModalTrigger extends StatelessWidget {
-  var tip = 'Если в группу чисел добавить число, равное среднему арифметическому этой группы, то среднее арифметическое новой группы будет равно среднему арифметическому начальной группы.';
+  final String tip = 'Если в группу чисел добавить число, равное среднему арифметическому этой группы, то среднее арифметическое новой группы будет равно среднему арифметическому начальной группы.';
   _showModalBottomSheet(context) {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
         return Container(
-          height: MediaQuery.of(context).size.height*0.6,
+          height: MediaQuery.of(context).size.height*0.4,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             color: Colors.white,
