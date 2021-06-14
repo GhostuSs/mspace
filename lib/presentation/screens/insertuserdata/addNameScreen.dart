@@ -1,3 +1,4 @@
+import 'package:enroll_spb_luxury/presentation/components/centerTitleAndBackBtn.dart';
 import 'package:enroll_spb_luxury/constants/colorsPallette.dart';
 import 'package:enroll_spb_luxury/data/passData.dart';
 import 'package:flutter/material.dart';
@@ -19,20 +20,9 @@ class _AddNameScreen extends State<AddNameScreen>{
         padding: EdgeInsets.fromLTRB(20, 100, 20, 40),
         child: Column(
           children: [
-            Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 80),child:Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                    'M-space',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Formular',
-                        fontSize: 30,
-                        decoration: TextDecoration.underline,
-                        decorationStyle: TextDecorationStyle.solid)
-                ),
-              ],)),
+            Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 80),
+                child: centerTitleWithBack(context)
+            ),
             Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 20), child:Text(
                 'Введите имя ученика',
                 style: TextStyle(
@@ -61,8 +51,6 @@ class _AddNameScreen extends State<AddNameScreen>{
                               borderRadius: BorderRadius.circular(10.0),
                           )
                       ))) ,),)
-
-
           ],
         ),
       ),

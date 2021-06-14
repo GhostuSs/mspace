@@ -31,7 +31,7 @@ class _AnswerScreen extends State<AnswerScreen>{
                     fontSize: 30
                 )
             )),
-            Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, height*0.05),
+            Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, height*0.1),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -58,91 +58,99 @@ class _AnswerScreen extends State<AnswerScreen>{
                     )
                 )
               ],
-            ),),
-            Padding(padding: EdgeInsets.only(top: 10.0,bottom: 10.0),
-            child: Container(
-              height: 50,
-              width: double.infinity,
-              child: ElevatedButton(
-                  onPressed: (){
-                    setState(() {
-                      Navigator.pushNamed(context,'/fullanswer');
-                    });
-                  },
-                  child: Text(
-                      'Посмотреть решение'.toUpperCase(),
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: kPersonalWhite,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Formular'
-                      )
-                  ),
-                  style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                      backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          )
-                      ))),
-            )),
-            Padding(padding: EdgeInsets.only(top: 10.0,bottom: 10.0),
-                child: Container(
-                  height: 50,
-                  width: double.infinity,
-                  child: ElevatedButton(
-                      onPressed: (){
-                        setState(() {
-                          Navigator.pushNamed(context,'/recommend');
-                        });
-                      },
-                      child: Text(
-                          'следующая задача'.toUpperCase(),
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: kPersonalWhite,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Formular'
-                          )
-                      ),
-                      style: ButtonStyle(
-                          foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                          backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              )
-                          ))),
-                )),
-            Padding(padding: EdgeInsets.only(top: 10.0,bottom: 10.0),
-                child: Container(
-                  height: 50,
-                  width: double.infinity,
-                  child: ElevatedButton(
-                      onPressed: (){
-                        setState(() {
-                          Navigator.pushNamed(context, '/info');
-                        });
-                      },
-                      child: Text(
-                          'закончить тренировку'.toUpperCase(),
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: kPersonalWhite,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Formular'
-                          )
-                      ),
-                      style: ButtonStyle(
-                          foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                          backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              )
-                          ))),
-                ))
+            )
+            ),
+            Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Padding(padding: EdgeInsets.only(top: 10.0,bottom: 10.0),
+                      child: Container(
+                        height: 50,
+                        width: double.infinity,
+                        child: ElevatedButton(
+                            onPressed: (){
+                              setState(() {
+                                Navigator.pushNamed(context,'/fullanswer');
+                              });
+                            },
+                            child: Text(
+                                'Посмотреть решение',
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: kPersonalWhite,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Formular'
+                                )
+                            ),
+                            style: ButtonStyle(
+                                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    )
+                                ))),
+                      )),
+                  Padding(padding: EdgeInsets.only(top: 10.0,bottom: 10.0),
+                      child: Container(
+                        height: 50,
+                        width: double.infinity,
+                        child: ElevatedButton(
+                            onPressed: (){
+                              setState(() {
+                                Navigator.pushNamed(context,'/recommend');
+                              });
+                            },
+                            child: Text(
+                                'Cледующая задача',
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: kPersonalWhite,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Formular'
+                                )
+                            ),
+                            style: ButtonStyle(
+                                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    )
+                                ))),
+                      )),
+                  Padding(padding: EdgeInsets.only(top: 10.0,bottom: 10.0),
+                      child: Container(
+                        height: 50,
+                        width: double.infinity,
+                        child: ElevatedButton(
+                            onPressed: (){
+                              setState(() {
+                                Navigator.pushNamed(context, '/info');
+                              });
+                            },
+                            child: Text(
+                                'Закончить тренировку',
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: kPersonalWhite,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Formular'
+                                )
+                            ),
+                            style: ButtonStyle(
+                                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    )
+                                ))),
+                      ))
+                ],
+              ),
+            )
           ],
         ),
       )

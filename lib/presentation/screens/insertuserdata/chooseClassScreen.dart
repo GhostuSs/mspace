@@ -1,3 +1,4 @@
+import 'package:enroll_spb_luxury/presentation/components/centerTitleAndBackBtn.dart';
 import 'package:enroll_spb_luxury/constants/colorsPallette.dart';
 import 'package:enroll_spb_luxury/data/passData.dart';
 import 'package:flutter/material.dart';
@@ -19,25 +20,12 @@ class _ChooseClassScreen extends State<ChooseClassScreen>{
         padding: EdgeInsets.fromLTRB(20, 100, 20, 40),
         child: Column(
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                    'M-space',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Formular',
-                        fontSize: 30,
-                        decoration: TextDecoration.underline,
-                        decorationStyle: TextDecorationStyle.solid)
-                ),
-              ],),
+            centerTitleWithBack(context),
             SizedBox(height:60),
             Padding(
               padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
               child:Text(
-                'Выберите текущий класс',
+                'Введите текущий класс',
                 style: TextStyle(
                     fontSize: 22,
                     fontFamily: 'Formular',
@@ -75,7 +63,7 @@ class _ChooseClassScreen extends State<ChooseClassScreen>{
     );
   }
   Widget buildClassEditField() {
-    double iconsSize=70;
+    double iconsSize=80;
     double fontSize=80;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +78,7 @@ class _ChooseClassScreen extends State<ChooseClassScreen>{
           child: Text(
           '$actualClass',
           style: TextStyle(
-            color: kPersonalBlack.withOpacity(0.4),
+            color: kPersonalBlack,
               fontFamily: 'Formular',
               fontSize: fontSize,
               fontWeight: FontWeight.bold

@@ -1,3 +1,4 @@
+import 'package:enroll_spb_luxury/presentation/components/centerTitleAndBackBtn.dart';
 import 'package:enroll_spb_luxury/constants/colorsPallette.dart';
 import 'package:enroll_spb_luxury/data/passData.dart';
 import 'package:flutter/material.dart';
@@ -22,21 +23,10 @@ class _ChooseSchoolsScreen extends State<ChooseSchoolsScreen>{
         padding: EdgeInsets.fromLTRB(20, 100, 20, 40),
         child: Column(
           children: [
-            Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 80),child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                    'M-space',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Formular',
-                        fontSize: 30,
-                        decoration: TextDecoration.underline,
-                        decorationStyle: TextDecorationStyle.solid)
-                ),
-              ],)),
-            Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 20),child:Text(
+            Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 80),child:
+            centerTitleWithBack(context)
+            ),
+            Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0),child:Text(
                 'Выберите заведение поступления',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -45,7 +35,7 @@ class _ChooseSchoolsScreen extends State<ChooseSchoolsScreen>{
                     fontFamily: 'Formular'
                 ),
               )),
-            Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 20),child:buildSchoolsList(_selectedItems,_colors,schools)),
+            Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 20),child:buildSchoolsList(_selectedItems,_colors,schools)),
             Padding(padding: EdgeInsets.fromLTRB(0,20,0,0),child: Container(
               width: double.infinity,
               height: 50,
@@ -60,7 +50,7 @@ class _ChooseSchoolsScreen extends State<ChooseSchoolsScreen>{
                     });
                   },
                   child: Text(
-                      "продолжить".toUpperCase(),
+                      "Продолжить",
                       style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,fontFamily: 'Formular')
                   ),
                   style: ButtonStyle(
@@ -80,28 +70,32 @@ class _ChooseSchoolsScreen extends State<ChooseSchoolsScreen>{
     return Padding(
       padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
       child: Container(
-      height: 195,
-      child: Center(child: ListView.builder(
-          itemCount: schools.length,
-          itemBuilder: (BuildContext context,index){
-            return ListTile(
-              minLeadingWidth: 3,
-              leading: _selectedItems.contains(index) ? Padding(padding: EdgeInsets.fromLTRB(0, 4, 0, 6),child: Icon(Icons.circle,size: 10,color: kPersonalBlue)) : Text(""),
-              title: Text("${schools[index]}",style: TextStyle(fontFamily: 'Formular',fontWeight: FontWeight.bold,color: _colors[index]==1 ? kPersonalBlue : kPersonalBlack.withOpacity(0.4))),
-              onTap: (){
-                setState(() {
-                  _colors[index]==0 ? _colors[index]=1 : _colors[index]=0;
-                  if(! _selectedItems.contains(index)){
-                    _selectedItems.add(index);
-                  } else {
-                    _selectedItems.removeWhere((val) => val == index);
+      height: MediaQuery.of(context).size.height*0.3,
+      child: Center(child: Scrollbar(
+        interactive: true,
+        child: ListView.builder(
+            itemCount: schools.length,
+            itemBuilder: (BuildContext context,index){
+              return ListTile(
+                  minLeadingWidth: 3,
+                  leading: _selectedItems.contains(index) ? Padding(padding: EdgeInsets.fromLTRB(0, 4, 0, 6),child: Icon(Icons.circle,size: 10,color: kPersonalBlue)) : Text(""),
+                  title: Text("${schools[index]}",style: TextStyle(fontFamily: 'Formular',fontWeight: FontWeight.bold,color: _colors[index]==1 ? kPersonalBlue : kPersonalBlack.withOpacity(0.4))),
+                  onTap: (){
+                    setState(() {
+                      _colors[index]==0 ? _colors[index]=1 : _colors[index]=0;
+                      if(! _selectedItems.contains(index)){
+                        _selectedItems.add(index);
+                      } else {
+                        _selectedItems.removeWhere((val) => val == index);
+                      }
+                      print(_selectedItems);
+                    });
                   }
-                  print(_selectedItems);
-                });
-              },
+              );
+            }),
 
-            );
-          })),
+      )
+      ),
     ));
   }
 }

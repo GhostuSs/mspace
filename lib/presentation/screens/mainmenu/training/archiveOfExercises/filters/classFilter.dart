@@ -20,7 +20,6 @@ class _ClassFilterScreen extends State<ClassFilterScreen>{
       body: Padding(
         padding: EdgeInsets.fromLTRB(0, 80, 0, 0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
@@ -43,40 +42,34 @@ class _ClassFilterScreen extends State<ClassFilterScreen>{
                 )
             ),
             buildSchoolsList(_selectedItems,_colors),
-            Stack(children: [
-              Align(
-                alignment: Alignment.center,
-                child:  Padding(
-                    padding: EdgeInsets.only(top:10.0),
-                    child: Container(
-                      height: 50,
-                      width: MediaQuery.of(context).size.width*0.95,
-                      child: ElevatedButton(
-                          onPressed: (){
-                            setState(() {
-                              Navigator.pop(context);
-                            });
-                          },
-                          child: Text(
-                              'применить'.toUpperCase(),
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  color: kPersonalWhite,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Formular'
-                              )
-                          ),
-                          style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                              backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
-                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  )
-                              ))),
-                    )),
-              )
-            ],)
+            Container(
+              height: 50,
+              width: MediaQuery.of(context).size.width*0.95,
+              child: ElevatedButton(
+                  onPressed: (){
+                    setState(() {
+                      Navigator.pop(context);
+                    });
+                  },
+                  child: Text(
+                      'Применить',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: kPersonalWhite,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Formular'
+                      )
+                  ),
+                  style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                      backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          )
+                      ))),
+            )
+
           ],
         ),
       ),

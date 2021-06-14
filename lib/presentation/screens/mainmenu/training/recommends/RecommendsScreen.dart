@@ -95,6 +95,11 @@ class _RecommendsScreen extends State<RecommendsScreen>{
               Padding(
                   padding: EdgeInsets.all(20),
                   child: TextField(
+                    cursorColor: kPersonalBlack,
+                    maxLines: 1,
+                    decoration: InputDecoration(
+                          hintText: 'Ответ'
+                    ),
                     controller: textFieldController,
                     autofocus: true,
                     onChanged: (str){

@@ -35,10 +35,10 @@ class _MainMenuScreen extends State<MainMenuScreen>{
                 )
             ), //Статьи
             BottomNavigationBarItem(
-                icon: Image.asset('lib/assets/calendar.png',
+                icon: Image.asset('lib/assets/editIcon.png',
                   color: kPersonalBlack,),
                 label: 'Даты',
-                activeIcon:Image.asset('lib/assets/calendar.png',color: kPersonalBlue,
+                activeIcon:Image.asset('lib/assets/dates.png',color: kPersonalBlue,
                 ) ), //Даты
             BottomNavigationBarItem(
                 icon: Image.asset('lib/assets/rocket.png',

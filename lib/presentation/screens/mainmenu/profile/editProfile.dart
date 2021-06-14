@@ -24,110 +24,66 @@ class _EditProfileScreen extends State<EditProfileScreen>{
             Padding(
                 padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
                 child: Stack(
-                  children: [
-                    Align(alignment: Alignment.topCenter,child: Text(
-                      'Изменить профиль',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Formular',
-                          fontSize: 30,
-                          color: kPersonalBlack
-                      ),
-                    ),),
-                    Align(alignment: Alignment.topLeft,child: IconButton(icon: Icon(Icons.arrow_back_ios,size:30,color: kPersonalBlack,), onPressed: (){Navigator.pop(context);})),
-                  ],
+                    children: [
+                      IconButton(onPressed:(){
+                        Navigator.pop(context);
+                      }, icon: Icon(Icons.arrow_back_ios,color: kPersonalBlack,size: 30,)),
+                      Center(child: Text(
+                          'Изменить профиль',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Formular',
+                              fontSize: 28,
+                              decorationStyle: TextDecorationStyle.solid)
+                      )),
+                    ]
                 )
             ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20,10,0,0),
-              child: TextButton(onPressed: (){}, child: Text(
-                  'Как к вам обращаться',
-                  style:
-                  TextStyle(
-                      color:kPersonalBlack,
-                      fontFamily: 'Formular',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20)
-              )),),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20,0,0,0),
-              child: TextButton(onPressed: (){}, child: Text(
-                  'Ваше фото',
-                  style:
-                  TextStyle(
-                      color:kPersonalBlack,
-                      fontFamily: 'Formular',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20)
-              )),),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20,0,0,0),
-              child: TextButton(onPressed: (){}, child: Text(
-                  'Почта',
-                  style:
-                  TextStyle(
-                      color:kPersonalBlack,
-                      fontFamily: 'Formular',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20)
-              )),),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20,0,0,0),
-              child: TextButton(onPressed: (){}, child: Text(
-                  'Текущий класс',
-                  style:
-                  TextStyle(
-                      color:kPersonalBlack,
-                      fontFamily: 'Formular',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20)
-              )),),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20,0,0,0),
-              child: TextButton(onPressed: (){}, child: Text(
-                  'Класс поступления',
-                  style:
-                  TextStyle(
-                      color:kPersonalBlack,
-                      fontFamily: 'Formular',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20)
-              )),),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20,0,0,30),
-              child: TextButton(onPressed: (){}, child: Text(
-                  'Школа поступления',
-                  style:
-                  TextStyle(
-                      color:kPersonalBlack,
-                      fontFamily: 'Formular',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20)
-              )),),
+            rawTextBtn('Как к вам обращаться'),
+            rawTextBtn('Ваше фото'),
+            rawTextBtn('Почта'),
+            rawTextBtn('Текущий класс'),
+            rawTextBtn('Класс поступления'),
+            rawTextBtn('Школа поступления'),
+            Spacer(),
             Align(
-                alignment: Alignment.bottomCenter,
-                child: TextButton(
-                    onPressed: (){
-                      setState(() {
-                        Navigator.pushNamed(context, "/auth");
-                      });
-                    },
-                    child: Text(
-                'Выйти',
-                style:
-                TextStyle(
-                    color:Color(0xFFFE1818),
-                    fontFamily: 'Formular',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20)
-            )))
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 20.0),
+                  child: TextButton(
+                      onPressed: (){
+                        setState(() {
+                          Navigator.pushNamed(context, "/auth");
+                        });
+                      },
+                      child: Text(
+                          'Выйти',
+                          style:
+                          TextStyle(
+                              color:Color(0xFFFE1818),
+                              fontFamily: 'Formular',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20)
+                      )),
+                ))
           ],
         ),
       ),
     );
   }
-
+Widget rawTextBtn(String title){
+ return Padding(
+   padding: EdgeInsets.fromLTRB(20,10,0,0),
+   child: TextButton(onPressed: (){}, child: Text(
+       title,
+       style:
+       TextStyle(
+           color:kPersonalBlack,
+           fontFamily: 'Formular',
+           fontWeight: FontWeight.bold,
+           fontSize: 20)
+   )),);
+}
 }
 void main(){
   runApp(MaterialApp(home: EditProfileScreen()));
