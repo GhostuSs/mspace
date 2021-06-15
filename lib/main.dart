@@ -15,6 +15,8 @@ import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/archive
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/archiveOfExercises/listExcercisesScreen.dart';
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/RecommendsScreen.dart';
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/fullAnswerScreen.dart';
+import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/introductoryClassScreen.dart';
+import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/introductorySchoolScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -47,6 +49,8 @@ void main() {
           "/archive":(BuildContext context) => ExcercisesScreen(),
           "/filterclass":(BuildContext context) => ClassFilterScreen(),
           "/filtertheme":(BuildContext context) => ThemeFilterScreen(),
+          '/introclass' : (BuildContext context) => IntroductoryClassScreen(),
+          '/introschool' : (BuildContext context) => IntroductorySchoolScreen(),
 
         },
       ),
