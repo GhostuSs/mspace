@@ -136,6 +136,7 @@ class _ExcersisesScreen extends State<ExcercisesScreen>{
                                                     exercise,
                                                     maxLines: 20,
                                                     overflow: TextOverflow.ellipsis,
+                                                    textAlign: TextAlign.justify,
                                                     style:
                                                     TextStyle(
                                                         fontFamily: 'Formular',
@@ -194,31 +195,32 @@ class _ExcersisesScreen extends State<ExcercisesScreen>{
                 child: Stack(
                   children: [
                     Align(
-                      alignment: Alignment.center,
+                      alignment: AlignmentDirectional.topCenter,
                       child: Text(
                         'Фильтры',
                         style: TextStyle(
                             fontFamily: 'Formular',
                             fontWeight: FontWeight.bold,
-                            fontSize: 18
+                            fontSize: 20
                         ),
                       ),
                     ),
                     Align(
-                      alignment: Alignment.centerRight,
+                      alignment: AlignmentDirectional.topEnd,
                       child: TextButton(child: Text(
                         'Сбросить',
                         style:TextStyle(
                           fontFamily: 'Formular',
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: 20,
                           color: kPersonalBlue
                       ),
                         ),
                       ),
                     )
                   ],
-                )),
+                )
+              ),
               Padding(
                 padding: EdgeInsets.only(top: 10.0),
                 child:
@@ -322,4 +324,8 @@ class _ExcersisesScreen extends State<ExcercisesScreen>{
     );
   }
 
+}
+
+void main(){
+  runApp(MaterialApp(home:ExcercisesScreen()));
 }

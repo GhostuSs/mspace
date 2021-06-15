@@ -43,7 +43,9 @@ class _AuthScreen extends State<AuthScreen>{
                     TextStyle(color: kPersonalBlue,fontFamily: 'Formular',fontSize: 18,fontWeight: FontWeight.bold),
                   ),
                 ),
-              ],)),
+              ]
+            )
+            ),
             Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 20),child:buildLoginTextField()),
             Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 10),child:buildPasswordTextField()),
             Padding(padding: EdgeInsets.fromLTRB(0,40,0,0),child: Container(
@@ -69,7 +71,8 @@ class _AuthScreen extends State<AuthScreen>{
                           RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),
                           )
-                      ))) ,))
+                      )))
+            ))
           ],
         ),
       ),
