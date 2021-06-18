@@ -3,13 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:textfield_search/textfield_search.dart';
 
-class IntroductorySchoolScreen extends StatefulWidget{
+class IntroductoryYearTestScreen extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
     return _ExcersisesScreen();
   }
 }
-class _ExcersisesScreen extends State<IntroductorySchoolScreen>{
+class _ExcersisesScreen extends State<IntroductoryYearTestScreen>{
+  List<int> listYear = [2009,2010,2011,2012];
   String exercise = "С января по июнь 46200 иммигрантов подали на гражданство. А в прошлом году за этот же период заявки подали 120000 иммигрантов. На сколько процентов уменьшилось количество заявок? В ответе укажите только число.";
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class _ExcersisesScreen extends State<IntroductorySchoolScreen>{
                     });
                     }),
                     Align(alignment: Alignment.bottomCenter,child: Text(
-                      'Школа',
+                      'ФМЛ №239',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -45,49 +46,49 @@ class _ExcersisesScreen extends State<IntroductorySchoolScreen>{
               child: Scrollbar(
                 interactive: true,
                 child: ListView.builder(
-                    itemCount: 6,
+                    itemCount: listYear.length,
                     itemBuilder: (BuildContext context,index){
                       return Padding(padding: EdgeInsets.only(bottom: 15.0),child: Container(
                         width: double.infinity,
                         child: ListTile(
                           title: Text(
-                              'ФМЛ №239',
+                              '${listYear[index]}',
                               style: TextStyle(
-                            fontFamily: 'Formular',
-                            fontWeight: FontWeight.bold,
-                            color: kPersonalBlack,
-                            fontSize: 18
-                          )
+                                  fontFamily: 'Formular',
+                                  fontWeight: FontWeight.bold,
+                                  color: kPersonalBlack,
+                                  fontSize: 18
+                              )
                           ),
                           trailing: IconButton(
-                            icon: Icon(
-                              Icons.arrow_forward_ios,
-                              color: kPersonalBlack,
-                              size: 30)
+                              icon: Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: kPersonalBlack,
+                                  size: 30)
                           ),
                           subtitle: Stack(
-                            children: [
-                              Padding(
-                              padding: EdgeInsets.only(top: 8.0,bottom: 8.0),
-                              child: Align(
-                                alignment: Alignment.topLeft,
-                                child: LinearProgressIndicator(
-                                  minHeight: 7,
-                                  backgroundColor: kPersonalBlack.withOpacity(0.05),
-                                  color: kPersonalBlue,
-                                  value: 100,
-                                  semanticsLabel: 'Linear progress indicator',
+                              children: [
+                                Padding(
+                                    padding: EdgeInsets.only(top: 8.0,bottom: 8.0),
+                                    child: Align(
+                                      alignment: Alignment.topLeft,
+                                      child: LinearProgressIndicator(
+                                        minHeight: 7,
+                                        backgroundColor: kPersonalBlack.withOpacity(0.05),
+                                        color: kPersonalBlue,
+                                        value: 100,
+                                        semanticsLabel: 'Linear progress indicator',
+                                      ),
+                                    )
                                 ),
-                              )
-                            ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 16.0),
-                                child: Align(
-                                  alignment: Alignment.bottomLeft,
-                                  child: Text('Решено 100%',style: TextStyle(color: kPersonalBlack,fontFamily: 'Formular',fontWeight: FontWeight.bold,fontSize: 11)),
-                                ),
-                              )
-                          ]
+                                Padding(
+                                  padding: EdgeInsets.only(top: 16.0),
+                                  child: Align(
+                                    alignment: Alignment.bottomLeft,
+                                    child: Text('Решено 100%',style: TextStyle(color: kPersonalBlack,fontFamily: 'Formular',fontWeight: FontWeight.bold,fontSize: 11)),
+                                  ),
+                                )
+                              ]
                           ),
                         ),
                         decoration: BoxDecoration(
@@ -233,7 +234,9 @@ class _ExcersisesScreen extends State<IntroductorySchoolScreen>{
                     width: MediaQuery.of(context).size.width*0.95,
                     child: ElevatedButton(
                         onPressed: (){
-                          Navigator.pushNamed(context, '/introyear');
+                          setState(() {
+                            Navigator.pop(context);
+                          });
                         },
                         child: Text(
                             'применить'.toUpperCase(),
@@ -264,5 +267,5 @@ class _ExcersisesScreen extends State<IntroductorySchoolScreen>{
 }
 
 void main(){
-  runApp(MaterialApp(home:IntroductorySchoolScreen()));
+  runApp(MaterialApp(home:IntroductoryYearTestScreen()));
 }
