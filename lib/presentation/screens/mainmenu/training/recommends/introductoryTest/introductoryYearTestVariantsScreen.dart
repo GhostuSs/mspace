@@ -3,14 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:textfield_search/textfield_search.dart';
 
-class IntroductoryYearTestScreen extends StatefulWidget{
+class IntroductoryTestVariantScreen extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
     return _ExcersisesScreen();
   }
 }
-class _ExcersisesScreen extends State<IntroductoryYearTestScreen>{
-  List<int> listYear = [2009,2010,2011,2012];
+class _ExcersisesScreen extends State<IntroductoryTestVariantScreen>{
+  List<String> listYear = ['1 вариант','2 вариант','3 вариант','4 вариант'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,11 +24,11 @@ class _ExcersisesScreen extends State<IntroductoryYearTestScreen>{
                 child: Stack(
                   children: [
                     IconButton(icon: Icon(Icons.arrow_back_ios),iconSize: 26, onPressed: (){setState(() {
-                      Navigator.pushNamed(context, '/introvariant');
+                      Navigator.pushNamed(context, '/info');
                     });
                     }),
                     Align(alignment: Alignment.bottomCenter,child: Text(
-                      'ФМЛ №239',
+                      '2010',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -266,5 +266,5 @@ class _ExcersisesScreen extends State<IntroductoryYearTestScreen>{
 }
 
 void main(){
-  runApp(MaterialApp(home:IntroductoryYearTestScreen()));
+  runApp(MaterialApp(home:IntroductoryTestVariantScreen()));
 }

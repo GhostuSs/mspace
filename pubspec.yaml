@@ -57,6 +57,7 @@ flutter:
     - lib/assets/statistic.png
     - lib/assets/profile.png
     - lib/assets/editIcon.png
+    - lib/assets/more.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

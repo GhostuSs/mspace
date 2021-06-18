@@ -18,6 +18,7 @@ import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recomme
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/introductoryClassScreen.dart';
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/introductorySchoolScreen.dart';
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/introductoryYearTestScreen.dart';
+import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/introductoryYearTestVariantsScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -53,6 +54,7 @@ void main() {
           '/introclass' : (BuildContext context) => IntroductoryClassScreen(),
           '/introschool' : (BuildContext context) => IntroductorySchoolScreen(),
           '/introyear' : (BuildContext context) => IntroductoryYearTestScreen(),
+          '/introvarianr' : (BuildContext context) => IntroductoryTestVariantScreen(),
 
         },
       ),

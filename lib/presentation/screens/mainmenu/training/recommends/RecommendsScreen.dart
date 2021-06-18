@@ -10,8 +10,6 @@ class RecommendsScreen extends StatefulWidget{
 }
 class _RecommendsScreen extends State<RecommendsScreen>{
   var textFieldController = TextEditingController();
-  String _answer;
-  String _correct="aa";
   String exercise = "С января по июнь 46200 иммигрантов подали на гражданство. А в прошлом году за этот же период заявки подали 120000 иммигрантов. На сколько процентов уменьшилось количество заявок? В ответе укажите только число.";
   @override
   Widget build(BuildContext context) {
