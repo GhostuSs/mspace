@@ -53,7 +53,7 @@ class _ChooseEnrollClassScreen extends State<ChooseEnrollClassScreen>{
                           RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),
                           )
-                      ))) ,),)
+                      )))),)
 
 
           ],

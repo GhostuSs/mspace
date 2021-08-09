@@ -4,21 +4,20 @@ import 'package:flutter/material.dart';
 
 class ArrayOfExercises  extends StatefulWidget {
   @override
-  _State createState() => _State();
+  Task createState() => Task();
 }
 
-class _State extends State<ArrayOfExercises> {
-  @override
-  Widget build(BuildContext context) {
-  return Container(
+class Task extends State<ArrayOfExercises> {
+  int index=1;
+  List<Widget> rowList = List.generate(10, (index) => (Container(
     width: 35,
     height: 35,
     decoration: BoxDecoration(
-      border: Border.all(color: kPersonalBlack)
+        border: Border.all(color: kPersonalBlack)
     ),
     child: Center(
       child: Text(
-          '1',
+          '${index+1}',
           style:TextStyle(
               color: kPersonalBlack,
               fontSize: 17,
@@ -26,6 +25,46 @@ class _State extends State<ArrayOfExercises> {
               fontFamily: 'Formular'
           )),
     ),
-  );
+  )));
+  List<Widget> secRowList = List.generate(10, (index) => (Container(
+    width: 35,
+    height: 35,
+    decoration: BoxDecoration(
+        border: Border.all(color: kPersonalBlack)
+    ),
+    child: Center(
+      child: Text(
+          '${index+11}',
+          style:TextStyle(
+              color: kPersonalBlack,
+              fontSize: 17,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Formular'
+          )),
+    ),
+  )));
+
+  @override
+  Widget build(BuildContext context) {
+  return Padding(
+    padding: EdgeInsets.only(top: 10,bottom: 10),
+    child: Container(
+      width: 0.9*MediaQuery.of(context).size.width,
+      height: 0.08*MediaQuery.of(context).size.height,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children:
+            rowList,
+          ),
+          Row(
+            mainAxisSize:MainAxisSize.min,
+            children: secRowList,
+          )
+        ],
+      ),
+    ));
   }
 }

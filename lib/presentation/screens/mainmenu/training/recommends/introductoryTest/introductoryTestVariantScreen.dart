@@ -12,7 +12,7 @@ class Test extends StatefulWidget{
 
 class _Test extends State<Test>{
   String exercise = "С января по июнь 46200 иммигрантов подали на гражданство. А в прошлом году за этот же период заявки подали 120000 иммигрантов. На сколько процентов уменьшилось количество заявок? В ответе укажите только число.";
-
+  var textFieldController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +59,7 @@ class _Test extends State<Test>{
                 Spacer(),
                 Padding(
                   padding: EdgeInsets.only(right: 20),
-                  child:IconButton(onPressed: (){}, icon: Image.asset('lib/assets/more.png',scale: 10)),)
+                  child:IconButton(onPressed: (){}, icon: Image.asset('lib/assets/more.png',scale: 10)))
               ],
             ),
           ),
@@ -73,7 +73,7 @@ class _Test extends State<Test>{
               Padding(
                   padding: EdgeInsets.only(left: 5),
                   child: Text(
-                    'Оставшеейся время',
+                    'Оставшееся время',
                     style: TextStyle(
                       color: kPersonalBlack,
                       fontSize: 22,
@@ -98,17 +98,22 @@ class _Test extends State<Test>{
             ],
           ),
           ArrayOfExercises(),
-          Container(
+          Padding(
+              padding: EdgeInsets.only(top: 25,bottom: 30,),
+            child: Container(
+              width: double.infinity,
               decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: kPersonalBlack.withOpacity(0.4),
-                    blurRadius: 0.3,
-                    spreadRadius:0.0,
-                  )
-                ]
+                  color: kPersonalWhite,
+                  boxShadow: [
+                    BoxShadow(
+                        color: kPersonalBlack.withOpacity(0.4),
+                        blurRadius: 0.5,
+                        spreadRadius:0.2,
+                        offset: Offset(0, 1)
+                    )
+                  ]
               ),
-              constraints: BoxConstraints(maxWidth: 0.9*MediaQuery.of(context).size.width),
+              constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width),
               child: Padding(
                 padding: EdgeInsets.all(10),
                 child: Text(
@@ -124,13 +129,121 @@ class _Test extends State<Test>{
                     )
                 ),
               )
-          )
+          )),
+          Padding(
+              padding: EdgeInsets.only(left: 15,right: 15),
+              child:buildAnswerTextField()
+          ),
+          Padding(
+              padding: EdgeInsets.only(top: 30,left: 20,bottom: 20,right: 20),
+              child: Container(
+                height: 50,
+                width: double.infinity,
+                child:
+                ElevatedButton(
+                  onPressed:(){},
+                  child: Text(
+                      'Записать в ответ',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: kPersonalWhite,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Formular'
+                      )),
+                  style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                    backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        )
+                    ),
+                  ),
+                ),
+              )
+          ),
+          Spacer(),
+          Padding(
+            padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height*0.1),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Container(
+                    height: 50,
+                    width: 85,
+                    child: ElevatedButton(
+                        onPressed: (){
+                        },
+                        child: Text(
+                            'Назад',
+                            style: TextStyle(
+                                fontSize: 13,
+                                color: kPersonalWhite,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Formular'
+                            )
+                        ),
+                        style: ButtonStyle(
+                            foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                            backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )
+                            ))),
+                  )),
+              Spacer(),
+              Padding(
+                  padding: EdgeInsets.only(right: 20),
+                  child: Container(
+                    height: 50,
+                    width: 85,
+                    child: ElevatedButton(
+                        onPressed: (){
+                        },
+                        child: Text(
+                            'Вперед',
+                            style: TextStyle(
+                                fontSize: 13,
+                                color: kPersonalWhite,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Formular'
+                            )
+                        ),
+                        style: ButtonStyle(
+                            foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                            backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )
+                            ))),
+                  )),
+            ],
+          ))
         ],
       ),
     );
   }
-
+  Widget buildAnswerTextField() {
+    return TextField(
+      controller: textFieldController,
+      autofocus: false,
+      cursorColor: kPersonalBlack,
+      decoration: InputDecoration(
+        labelText: 'Ответ',
+        focusColor: kPersonalBlack,
+      ),
+      onChanged: (String s){
+      },
+    );
+  }
 }
+
+
 void main(){
   runApp(MaterialApp(
     home: Test()
