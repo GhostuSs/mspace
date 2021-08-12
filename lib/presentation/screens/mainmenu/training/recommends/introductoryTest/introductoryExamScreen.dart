@@ -565,7 +565,7 @@ class _Test extends State<IntroductoryExamScreen>{
               child: ElevatedButton(
                   onPressed: (){
                     setState(() {
-                      Navigator.pushNamed(context,'/info');
+                      Navigator.pushNamed(context,'/examreport');
                     });
                   },
                   child: Text(

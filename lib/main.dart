@@ -15,6 +15,7 @@ import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/archive
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/archiveOfExercises/listExcercisesScreen.dart';
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/RecommendsScreen.dart';
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/fullAnswerScreen.dart';
+import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/examReport.dart';
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/introductoryClassScreen.dart';
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/introductorySchoolScreen.dart';
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/introductoryExamScreen.dart';
@@ -57,6 +58,7 @@ void main() {
           '/introyear' : (BuildContext context) => IntroductoryYearTestScreen(),
           '/introvariant' : (BuildContext context) => IntroductoryTestVariantScreen(),
           '/introexam' : (BuildContext context) => IntroductoryExamScreen(),
+          '/examreport' : (BuildContext context) => Report(),
 
         },
       ),
