@@ -38,12 +38,12 @@ class _TrainingScreen extends State<IntroductoryClassScreen>{
               Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    RawBtn('5 класс', '/recommend'),
-                    RawBtn('6 класс', '/recommend'),
-                    RawBtn('7 класс', '/recommend'),
-                    RawBtn('8 класс', '/recommend'),
-                    RawBtn('9 класс', '/recommend'),
-                    RawBtn('10 класс', '/recommend'),
+                    RawBtn('5 класс', '/introvariant'),
+                    RawBtn('6 класс', '/introvariant'),
+                    RawBtn('7 класс', '/introvariant'),
+                    RawBtn('8 класс', '/introvariant'),
+                    RawBtn('9 класс', '/introvariant'),
+                    RawBtn('10 класс', '/introvariant'),
                   ],
               )
 

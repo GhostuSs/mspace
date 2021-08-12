@@ -60,6 +60,9 @@ class _ExcersisesScreen extends State<IntroductoryTestVariantScreen>{
                               )
                           ),
                           trailing: IconButton(
+                            onPressed: (){
+                              Navigator.pushNamed(context, '/introexam');
+                            },
                               icon: Icon(
                                   Icons.arrow_forward_ios,
                                   color: kPersonalBlack,
@@ -263,8 +266,4 @@ class _ExcersisesScreen extends State<IntroductoryTestVariantScreen>{
     );
   }
 
-}
-
-void main(){
-  runApp(MaterialApp(home:IntroductoryTestVariantScreen()));
 }
