@@ -49,8 +49,6 @@ class Task extends State<ArrayOfExercises> {
   return Padding(
     padding: EdgeInsets.only(top: 10,bottom: 10),
     child: Container(
-      width: 0.9*MediaQuery.of(context).size.width,
-      height: 0.12*MediaQuery.of(context).size.height,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

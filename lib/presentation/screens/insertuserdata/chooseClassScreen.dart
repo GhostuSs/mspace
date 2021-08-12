@@ -16,49 +16,53 @@ class _ChooseClassScreen extends State<ChooseClassScreen>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(20, 100, 20, 40),
-        child: Column(
-          children: [
-            centerTitleWithBack(context),
-            SizedBox(height:60),
-            Padding(
-              padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
-              child:Text(
-                'Введите текущий класс',
-                style: TextStyle(
-                    fontSize: 22,
-                    fontFamily: 'Formular',
-                    fontWeight:FontWeight.bold
-                ),
-              ),),
-            Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 20),child:buildClassEditField()),
-            Padding(padding: EdgeInsets.fromLTRB(0,20,0,0),child: Container(
-              width: double.infinity,
-              height: 50,
-              child: ElevatedButton(
-                  onPressed: (){
-                    setState(() {
-                      context.read<User>().actualClass=actualClass;
-                      Navigator.pushNamed(context, '/enrollclass');
-                    });
-                  },
-                  child: Text(
-                      "продолжить".toUpperCase(),
-                      style: TextStyle(fontSize: 16,fontFamily: 'Formular',fontWeight: FontWeight.bold)
-                  ),
-                  style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                      backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                          )
-                      ))) ,),)
+      body: ListView(
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(20, 100, 20, 40),
+            child: Column(
+              children: [
+                centerTitleWithBack(context),
+                SizedBox(height:60),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
+                  child:Text(
+                    'Введите текущий класс',
+                    style: TextStyle(
+                        fontSize: 22,
+                        fontFamily: 'Formular',
+                        fontWeight:FontWeight.bold
+                    ),
+                  ),),
+                Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 20),child:buildClassEditField()),
+                Padding(padding: EdgeInsets.fromLTRB(0,20,0,0),child: Container(
+                  width: double.infinity,
+                  height: 50,
+                  child: ElevatedButton(
+                      onPressed: (){
+                        setState(() {
+                          context.read<User>().actualClass=actualClass;
+                          Navigator.pushNamed(context, '/enrollclass');
+                        });
+                      },
+                      child: Text(
+                          "продолжить".toUpperCase(),
+                          style: TextStyle(fontSize: 16,fontFamily: 'Formular',fontWeight: FontWeight.bold)
+                      ),
+                      style: ButtonStyle(
+                          foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                          backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              )
+                          ))) ,),)
 
 
-          ],
-        ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

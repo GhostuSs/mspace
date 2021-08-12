@@ -27,10 +27,10 @@ class _ExcersisesScreen extends State<ExcercisesScreen>{
                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                 child: Stack(
               children: [
-                IconButton(icon: Icon(Icons.arrow_back_ios),iconSize: 28, onPressed: (){setState(() {
+                IconButton(icon: Icon(Icons.arrow_back_ios),iconSize: 30, onPressed: (){setState(() {
                   Navigator.pushNamed(context, '/info');
                 });}),
-                Align(alignment: Alignment.bottomCenter,child: Text(
+                Align(alignment: Alignment.bottomCenter,child: Padding(padding: EdgeInsets.only(top: 7),child: Text(
                   'Архив задач',
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -39,7 +39,7 @@ class _ExcersisesScreen extends State<ExcercisesScreen>{
                       fontSize: 30,
                       color: kPersonalBlack
                   ),
-                ),),
+                ))),
                 Align(alignment: Alignment.bottomRight,child: IconButton(icon: Image.asset('lib/assets/editIcon.png'), onPressed: (){
                   setState(() {
                     _showModalBottomSheet(context);
@@ -179,13 +179,7 @@ class _ExcersisesScreen extends State<ExcercisesScreen>{
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
-        return Container(
-          height: MediaQuery.of(context).size.height*0.35,
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
-          ),
+        return Card(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -196,25 +190,28 @@ class _ExcersisesScreen extends State<ExcercisesScreen>{
                   children: [
                     Align(
                       alignment: AlignmentDirectional.topCenter,
-                      child: Text(
-                        'Фильтры',
-                        style: TextStyle(
-                            fontFamily: 'Formular',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 10),
+                        child: Text(
+                          'Фильтры',
+                          style: TextStyle(
+                              fontFamily: 'Formular',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20
+                          ),
                         ),
                       ),
                     ),
                     Align(
                       alignment: AlignmentDirectional.topEnd,
                       child: TextButton(child: Text(
-                        'Сбросить',
-                        style:TextStyle(
-                          fontFamily: 'Formular',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: kPersonalBlue
-                      ),
+                          'Сбросить',
+                          style:TextStyle(
+                              fontFamily: 'Formular',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: kPersonalBlue
+                          ),
                         ),
                       ),
                     )
@@ -288,7 +285,7 @@ class _ExcersisesScreen extends State<ExcercisesScreen>{
                   )
               ),
               Padding(
-                padding: EdgeInsets.only(top:10.0),
+                padding: EdgeInsets.only(top:10.0,bottom: 15),
                 child: Container(
                   height: 50,
                   width: MediaQuery.of(context).size.width*0.95,

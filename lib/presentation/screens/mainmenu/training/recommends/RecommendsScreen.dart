@@ -16,160 +16,162 @@ class _RecommendsScreen extends State<RecommendsScreen>{
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(0 , height*0.1,0 ,0),
-            child: Column(children: [
+      body: ListView(
+        children: [Column(
+            children: [
               Padding(
-                  padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
-                  child: Stack(
-                    children: [
-                      Align(alignment: Alignment.bottomCenter,child: Text(
-                        'Рекомендации',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Formular',
-                            fontSize: 30,
-                            color: kPersonalBlack
-                        ),
-                      ),),
-                      Align(alignment: Alignment.bottomLeft,child: IconButton(icon: Icon(Icons.arrow_back_ios), onPressed: (){
-                        setState(() {
-                          Navigator.pop(context);
-                        });
-                      })),
-                    ],
-                  )
-              ),
-              Container(
-                width: double.infinity,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      children: [
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Padding(
-                              padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-                              child:
-                              Container(
-                                  constraints: BoxConstraints(maxWidth: 0.9*MediaQuery.of(context).size.width),
-                                  child: Padding(
-                                    padding: EdgeInsets.all(10),
-                                    child: Text(
-                                        exercise,
-                                        maxLines: 20,
-                                        textAlign: TextAlign.justify,
-                                        overflow: TextOverflow.ellipsis,
-                                        style:
-                                        TextStyle(
-                                            fontFamily: 'Formular',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 20
+                  padding: EdgeInsets.fromLTRB(0 , height*0.1,0 ,0),
+                  child: Column(children: [
+                    Padding(
+                        padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+                        child: Stack(
+                          children: [
+                            Align(alignment: Alignment.bottomCenter,child: Padding(padding: EdgeInsets.only(top: 8,left: 5),child: Text(
+                              'Рекомендации',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Formular',
+                                  fontSize: 30,
+                                  color: kPersonalBlack
+                              ),
+                            ),)),
+                            Align(alignment: Alignment.bottomLeft,child: IconButton(iconSize: 30,icon: Icon(Icons.arrow_back_ios), onPressed: (){
+                              setState(() {
+                                Navigator.pop(context);
+                              });
+                            })),
+                          ],
+                        )
+                    ),
+                    Container(
+                      width: double.infinity,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Padding(
+                                    padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
+                                    child:
+                                    Container(
+                                        constraints: BoxConstraints(maxWidth: 0.9*MediaQuery.of(context).size.width),
+                                        child: Padding(
+                                          padding: EdgeInsets.all(10),
+                                          child: Text(
+                                              exercise,
+                                              maxLines: 20,
+                                              textAlign: TextAlign.justify,
+                                              overflow: TextOverflow.ellipsis,
+                                              style:
+                                              TextStyle(
+                                                  fontFamily: 'Formular',
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 20
+                                              )
+                                          ),
                                         )
-                                    ),
-                                  )
-                              )
+                                    )
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 2.5,
-                      offset: Offset(-1, 0), // changes position of shadow
-                    ),
+                        ],
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 2.5,
+                            offset: Offset(-1, 0), // changes position of shadow
+                          ),
 
-                  ],
-                ),
-              ),
-              Padding(
-                  padding: EdgeInsets.all(20),
-                  child: TextField(
-                    cursorColor: kPersonalBlack,
-                    maxLines: 1,
-                    decoration: InputDecoration(
-                          hintText: 'Ответ'
-                    ),
-                    controller: textFieldController,
-                    autofocus: true,
-                    onChanged: (str){
-                        _answer=textFieldController.text;
-                      }
-                  )
-              ),
-              Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Container(
-                    height: 50,
-                    width: double.infinity,
-                    child:
-                    ElevatedButton(
-                        onPressed: (){
-                          setState(() {
-                            Navigator.pushNamed(context,'/answer');
-                          });
-                        },
-                        child: Text(
-                            'Проверить',
-                            style: TextStyle(
-                                fontSize: 16,
-                                color: kPersonalWhite,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Formular'
-                            )
-                        ),
-                        style: ButtonStyle(
-                            foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                            backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                )
-                            ))),
-                  )
-              ),
-              Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Container(
-                    height: 50,
-                    width: double.infinity,
-                    child:
-                    ElevatedButton(
-                      onPressed:_onButtonPressed,
-                      child: Text(
-                          'Подсказка',
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: kPersonalWhite,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Formular'
-                          )),
-                      style: ButtonStyle(
-                        foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                        backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            )
-                        ),
+                        ],
                       ),
                     ),
+                    Padding(
+                        padding: EdgeInsets.all(20),
+                        child: TextField(
+                            cursorColor: kPersonalBlack,
+                            maxLines: 1,
+                            decoration: InputDecoration(
+                                hintText: 'Ответ'
+                            ),
+                            controller: textFieldController,
+                            autofocus: true,
+                            onChanged: (str){
+                              _answer=textFieldController.text;
+                            }
+                        )
+                    ),
+                    Padding(
+                        padding: EdgeInsets.all(20),
+                        child: Container(
+                          height: 50,
+                          width: double.infinity,
+                          child:
+                          ElevatedButton(
+                              onPressed: (){
+                                setState(() {
+                                  Navigator.pushNamed(context,'/answer');
+                                });
+                              },
+                              child: Text(
+                                  'Проверить',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: kPersonalWhite,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Formular'
+                                  )
+                              ),
+                              style: ButtonStyle(
+                                  foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                  backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      )
+                                  ))),
+                        )
+                    ),
+                    Padding(
+                        padding: EdgeInsets.all(20),
+                        child: Container(
+                          height: 50,
+                          width: double.infinity,
+                          child:
+                          ElevatedButton(
+                            onPressed:_onButtonPressed,
+                            child: Text(
+                                'Подсказка',
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: kPersonalWhite,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Formular'
+                                )),
+                            style: ButtonStyle(
+                              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                              backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  )
+                              ),
+                            ),
+                          ),
+                        )
+                    )
+                  ]
                   )
               )
             ]
-            )
-          )
-        ]
+        )],
       )
     );
   }

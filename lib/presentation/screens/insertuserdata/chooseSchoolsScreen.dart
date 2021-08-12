@@ -19,50 +19,54 @@ class _ChooseSchoolsScreen extends State<ChooseSchoolsScreen>{
   Widget build(BuildContext context) {
 
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(20, 100, 20, 40),
-        child: Column(
-          children: [
-            Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 80),child:
-            centerTitleWithBack(context)
-            ),
-            Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0),child:Text(
-                'Выберите заведение поступления',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22,
-                    fontFamily: 'Formular'
+      body: ListView(
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(20, 100, 20, 40),
+            child: Column(
+              children: [
+                Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 80),child:
+                centerTitleWithBack(context)
                 ),
-              )),
-            Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 20),child:buildSchoolsList(_selectedItems,_colors,schools)),
-            Padding(padding: EdgeInsets.fromLTRB(0,20,0,0),child: Container(
-              width: double.infinity,
-              height: 50,
-              child: ElevatedButton(
-                  onPressed: (){
-                    setState(() {
-                      //context.read<User>().enrollSchools.
-                      for(var item in _selectedItems){
-                        context.read<User>().enrollSchools.add(schools[item]);
-                        Navigator.pushNamed(context, "/info");
-                      }
-                    });
-                  },
-                  child: Text(
-                      "Продолжить",
-                      style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,fontFamily: 'Formular')
+                Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0),child:Text(
+                  'Выберите заведение поступления',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                      fontFamily: 'Formular'
                   ),
-                  style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                      backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                          )
-                      ))) ))
-          ],
-        ),
+                )),
+                Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 20),child:buildSchoolsList(_selectedItems,_colors,schools)),
+                Padding(padding: EdgeInsets.fromLTRB(0,20,0,0),child: Container(
+                    width: double.infinity,
+                    height: 50,
+                    child: ElevatedButton(
+                        onPressed: (){
+                          setState(() {
+                            //context.read<User>().enrollSchools.
+                            for(var item in _selectedItems){
+                              context.read<User>().enrollSchools.add(schools[item]);
+                              Navigator.pushNamed(context, "/info");
+                            }
+                          });
+                        },
+                        child: Text(
+                            "Продолжить",
+                            style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,fontFamily: 'Formular')
+                        ),
+                        style: ButtonStyle(
+                            foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                            backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                )
+                            ))) ))
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

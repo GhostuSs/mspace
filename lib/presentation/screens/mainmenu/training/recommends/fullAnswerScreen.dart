@@ -17,134 +17,137 @@ class _FullAnswerScreen extends State<FullAnswerScreen>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(0 ,MediaQuery.of(context).size.height*0.1 ,0 ,0),
-              child: Column(
-                  children: [
-                    Padding(
-                    padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
-                    child: Stack(
-                      children: [
-                        Align(alignment: Alignment.bottomCenter,child: Text(
-                          'Решение',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Formular',
-                              fontSize: 30,
-                              color: kPersonalBlack
-                          ),
-                        ),),
-                        Align(alignment: Alignment.bottomLeft,child: IconButton(icon: Icon(Icons.arrow_back_ios), onPressed: (){
-                          setState(() {
-                            Navigator.pop(context);
-                          });
-                        })),
-                      ],
-                    )
-                ),
-                    Container(
-                  width: double.infinity,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.fromLTRB(0 ,MediaQuery.of(context).size.height*0.1 ,0 ,0),
+                child: Column(
                     children: [
-                      Column(
-                        children: [
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Padding(
-                                padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-                                child:
-                                Container(
-                                    constraints: BoxConstraints(maxWidth: 0.9*MediaQuery.of(context).size.width),
-                                    child: Padding(
-                                      padding: EdgeInsets.all(10),
-                                      child: Text(
-                                          exercise,
-                                          maxLines: 20,
-                                          overflow: TextOverflow.ellipsis,
-                                          style:
-                                          TextStyle(
-                                              fontFamily: 'Formular',
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20)
-                                      ),
-                                    )
-                                )
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
-                      ),
-
-                    ],
-                  ),
-                ),
-                    Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: DefaultTextStyle.merge(child: CaTeX(r'\ S =: \sum{f_i}'),style: TextStyle(fontSize: 30))),
-                    Container(
-                      width: double.infinity,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
+                      Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+                          child: Stack(
                             children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                child: Padding(
-                                    padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-                                    child:
-                                    Container(
-                                        constraints: BoxConstraints(maxWidth: 0.9*MediaQuery.of(context).size.width),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(10),
-                                          child: Text(
-                                              _description,
-                                              maxLines: 25,
-                                              overflow: TextOverflow.ellipsis,
-                                              style:
-                                              TextStyle(
-                                                  fontFamily: 'Formular',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 16)
-                                          ),
-                                        )
-                                    )
+                              Align(alignment: Alignment.bottomCenter,child: Text(
+                                'Решение',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Formular',
+                                    fontSize: 30,
+                                    color: kPersonalBlack
                                 ),
-                              ),
+                              ),),
+                              Align(alignment: Alignment.bottomLeft,child: IconButton(icon: Icon(Icons.arrow_back_ios), onPressed: (){
+                                setState(() {
+                                  Navigator.pop(context);
+                                });
+                              })),
                             ],
-                          ),
-                        ],
+                          )
                       ),
-                    ),
-                    Text(
-                        'Ответ: $answer',
-                        maxLines: 25,
-                        overflow: TextOverflow.ellipsis,
-                        style:
-                        TextStyle(
-                            fontFamily: 'Formular',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16)
-                    ),
+                      Container(
+                        width: double.infinity,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
+                                      child:
+                                      Container(
+                                          constraints: BoxConstraints(maxWidth: 0.9*MediaQuery.of(context).size.width),
+                                          child: Padding(
+                                            padding: EdgeInsets.all(10),
+                                            child: Text(
+                                                exercise,
+                                                maxLines: 20,
+                                                overflow: TextOverflow.ellipsis,
+                                                style:
+                                                TextStyle(
+                                                    fontFamily: 'Formular',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 20)
+                                            ),
+                                          )
+                                      )
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: Offset(0, 3), // changes position of shadow
+                            ),
 
-              ]
-              ),
-            )
-          ],
+                          ],
+                        ),
+                      ),
+                      Padding(
+                          padding: EdgeInsets.only(top:10,left: 10,right: 10),
+                          child: DefaultTextStyle.merge(child: CaTeX(r'\ S =: \sum{f_i}'),style: TextStyle(fontSize: 30))),
+                      Container(
+                        width: double.infinity,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
+                                      child:
+                                      Container(
+                                          constraints: BoxConstraints(maxWidth: 0.9*MediaQuery.of(context).size.width),
+                                          child: Padding(
+                                            padding: EdgeInsets.all(10),
+                                            child: Text(
+                                                _description,
+                                                maxLines: 25,
+                                                overflow: TextOverflow.ellipsis,
+                                                style:
+                                                TextStyle(
+                                                    fontFamily: 'Formular',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 16)
+                                            ),
+                                          )
+                                      )
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Text(
+                          'Ответ: $answer',
+                          maxLines: 25,
+                          overflow: TextOverflow.ellipsis,
+                          style:
+                          TextStyle(
+                              fontFamily: 'Formular',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16)
+                      ),
+
+                    ]
+                ),
+              )
+            ],
+          ),
         )
     );
   }

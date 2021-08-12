@@ -18,115 +18,119 @@ class _TrainingScreen extends State<TrainingScreen>{
       body: Padding(
         padding: EdgeInsets.fromLTRB(20, height*0.1, 20, 0),
         child:  Scaffold(
-          body: Column(
+          body: ListView(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              Column(
                 children: [
-                  Text(
-                    'Тренировка',
-                    style: TextStyle(
-                        fontFamily:'Formular',
-                        fontWeight: FontWeight.bold,
-                        fontSize: 23,
-                        color: kPersonalBlack
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Тренировка',
+                        style: TextStyle(
+                            fontFamily:'Formular',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 23,
+                            color: kPersonalBlack
+                        ),
+                      ),
+                    ],
                   ),
+                  Padding(
+                      padding: EdgeInsets.only(top: height*0.15),
+                      child: Column(
+                        children: [
+                          Padding(
+                              padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
+                              child: Container(
+                                height: 50,
+                                width: double.infinity,
+                                child: ElevatedButton(
+                                    onPressed: (){
+                                      setState(() {
+                                        Navigator.pushNamed(context, '/recommend');
+                                      });
+                                    },
+                                    child: Text(
+                                        'Решать рекомендации',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color: kPersonalWhite,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Formular'
+                                        )
+                                    ),
+                                    style: ButtonStyle(
+                                        foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                        backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(10),
+                                            )
+                                        ))),
+                              )),
+                          Padding(
+                              padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
+                              child:Container(
+                                height: 50,
+                                width: double.infinity,
+                                child: ElevatedButton(
+                                    onPressed: (){
+                                      setState(() {
+                                        Navigator.pushNamed(context,'/archive');
+                                      });
+                                    },
+                                    child: Text(
+                                        'Архив задач',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color: kPersonalWhite,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Formular'
+                                        )
+                                    ),
+                                    style: ButtonStyle(
+                                        foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                        backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(10),
+                                            )
+                                        ))),
+                              )),
+                          Padding(
+                              padding: EdgeInsets.fromLTRB(0,30, 0, 30),
+                              child:Container(
+                                height: 50,
+                                width: double.infinity,
+                                child: ElevatedButton(
+                                    onPressed: (){
+                                      setState(() {
+                                        Navigator.pushNamed(context, '/introclass');
+                                      });
+                                    },
+                                    child: Text(
+                                        'Вступительный вариант',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color: kPersonalWhite,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Formular'
+                                        )
+                                    ),
+                                    style: ButtonStyle(
+                                        foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                        backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(10),
+                                            )
+                                        ))),
+                              )),
+                        ],
+                      )
+                  )
                 ],
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: height*0.15),
-                child: Column(
-                children: [
-                  Padding(
-                      padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
-                      child: Container(
-                        height: 50,
-                        width: double.infinity,
-                        child: ElevatedButton(
-                            onPressed: (){
-                              setState(() {
-                                Navigator.pushNamed(context, '/recommend');
-                              });
-                            },
-                            child: Text(
-                                'Решать рекомендации',
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    color: kPersonalWhite,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'Formular'
-                                )
-                            ),
-                            style: ButtonStyle(
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                                backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                    )
-                                ))),
-                      )),
-                  Padding(
-                      padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
-                      child:Container(
-                        height: 50,
-                        width: double.infinity,
-                        child: ElevatedButton(
-                            onPressed: (){
-                              setState(() {
-                                Navigator.pushNamed(context,'/archive');
-                              });
-                            },
-                            child: Text(
-                                'Архив задач',
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    color: kPersonalWhite,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'Formular'
-                                )
-                            ),
-                            style: ButtonStyle(
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                                backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                    )
-                                ))),
-                      )),
-                  Padding(
-                      padding: EdgeInsets.fromLTRB(0,30, 0, 30),
-                      child:Container(
-                        height: 50,
-                        width: double.infinity,
-                        child: ElevatedButton(
-                            onPressed: (){
-                              setState(() {
-                                Navigator.pushNamed(context, '/introclass');
-                              });
-                            },
-                            child: Text(
-                                'Вступительный вариант',
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    color: kPersonalWhite,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'Formular'
-                                )
-                            ),
-                            style: ButtonStyle(
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                                backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                    )
-                                ))),
-                      )),
-                ],
-              )
               )
             ],
           ),

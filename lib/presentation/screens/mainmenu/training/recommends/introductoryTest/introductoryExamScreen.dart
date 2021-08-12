@@ -17,17 +17,19 @@ class _Test extends State<IntroductoryExamScreen>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      resizeToAvoidBottomInset: false,
+      body:ListView(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                  padding: EdgeInsets.only(top: 50,left: 20),
+                  padding: EdgeInsets.only(top: 40,left: 20),
                   child:TextButton(
                       onPressed: (){
-                          showDialog(context: context, builder: (context) => buildExitDialog());
-                        },
+                        showDialog(context: context, builder: (context) => buildExitDialog());
+                      },
                       child: Text(
                         'Завершить',
                         style: TextStyle(
@@ -46,7 +48,7 @@ class _Test extends State<IntroductoryExamScreen>{
             child: Row(
               children: [
                 Padding(
-                    padding: EdgeInsets.only(left: 90),
+                  padding: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.1),
                   child: Text(
                     'Вступительная',
                     style: TextStyle(
@@ -59,12 +61,12 @@ class _Test extends State<IntroductoryExamScreen>{
                 ),
                 Spacer(),
                 Padding(
-                  padding: EdgeInsets.only(right: 20),
-                  child:IconButton(onPressed: (){
-                    _showModalBottomSheet(context);
-                  },
-                      icon: Image.asset('lib/assets/more.png',scale: 10)
-                  )
+                    padding: EdgeInsets.only(right: 20),
+                    child:IconButton(onPressed: (){
+                      _showModalBottomSheet(context);
+                    },
+                        icon: Image.asset('lib/assets/more.png',scale: 10)
+                    )
                 )
               ],
             ),
@@ -73,7 +75,7 @@ class _Test extends State<IntroductoryExamScreen>{
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                  padding: EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.05),
                   child:Icon(Icons.timer,color: kPersonalBlack,size: 26)
               ),
               Padding(
@@ -106,36 +108,36 @@ class _Test extends State<IntroductoryExamScreen>{
           ArrayOfExercises(),
           Padding(
               padding: EdgeInsets.only(top: 25,bottom: 30,),
-            child: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  color: kPersonalWhite,
-                  boxShadow: [
-                    BoxShadow(
-                        color: kPersonalBlack.withOpacity(0.4),
-                        blurRadius: 0.5,
-                        spreadRadius:0.2,
-                        offset: Offset(0, 1)
-                    )
-                  ]
-              ),
-              constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width),
-              child: Padding(
-                padding: EdgeInsets.all(10),
-                child: Text(
-                    exercise,
-                    maxLines: 20,
-                    textAlign: TextAlign.justify,
-                    overflow: TextOverflow.ellipsis,
-                    style:
-                    TextStyle(
-                        fontFamily: 'Formular',
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20
-                    )
-                ),
-              )
-          )),
+              child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: kPersonalWhite,
+                      boxShadow: [
+                        BoxShadow(
+                            color: kPersonalBlack.withOpacity(0.4),
+                            blurRadius: 0.5,
+                            spreadRadius:0.2,
+                            offset: Offset(0, 1)
+                        )
+                      ]
+                  ),
+                  constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width),
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                        exercise,
+                        maxLines: 20,
+                        textAlign: TextAlign.justify,
+                        overflow: TextOverflow.ellipsis,
+                        style:
+                        TextStyle(
+                            fontFamily: 'Formular',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20
+                        )
+                    ),
+                  )
+              )),
           Padding(
               padding: EdgeInsets.only(left: 15,right: 15),
               child:buildAnswerTextField(context)
@@ -178,71 +180,71 @@ class _Test extends State<IntroductoryExamScreen>{
           ),
           Spacer(),
           Padding(
-            padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height*0.08
-            ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: Container(
-                    height: 50,
-                    width: 85,
-                    child: ElevatedButton(
-                        onPressed: (){
-                        },
-                        child: Text(
-                            'Назад',
-                            style: TextStyle(
-                                fontSize: 13,
-                                color: kPersonalWhite,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Formular'
-                            )
-                        ),
-                        style: ButtonStyle(
-                            foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                            backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).size.height*0.08
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                      padding: EdgeInsets.only(left: 20),
+                      child: Container(
+                        height: 50,
+                        width: 85,
+                        child: ElevatedButton(
+                            onPressed: (){
+                            },
+                            child: Text(
+                                'Назад',
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: kPersonalWhite,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Formular'
                                 )
-                            ))),
-                  )),
-              Spacer(),
-              Padding(
-                  padding: EdgeInsets.only(right: 20),
-                  child: Container(
-                    height: 50,
-                    width: 85,
-                    child: ElevatedButton(
-                        onPressed: (){
+                            ),
+                            style: ButtonStyle(
+                                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    )
+                                ))),
+                      )),
+                  Spacer(),
+                  Padding(
+                      padding: EdgeInsets.only(right: 20),
+                      child: Container(
+                        height: 50,
+                        width: 85,
+                        child: ElevatedButton(
+                            onPressed: (){
 
-                        },
-                        child: Text(
-                            'Вперед',
-                            style: TextStyle(
-                                fontSize: 13,
-                                color: kPersonalWhite,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Formular'
-                            )
-                        ),
-                        style: ButtonStyle(
-                            foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                            backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
+                            },
+                            child: Text(
+                                'Вперед',
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: kPersonalWhite,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Formular'
                                 )
-                            ))),
-                  )),
-            ],
-          ))
+                            ),
+                            style: ButtonStyle(
+                                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    )
+                                ))),
+                      )),
+                ],
+              ))
         ],
-      ),
+      )
     );
   }
   _showModalBottomSheet(context) {
@@ -256,10 +258,12 @@ class _Test extends State<IntroductoryExamScreen>{
               borderRadius: BorderRadius.all(Radius.circular(10.0)),
             ),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Padding(
                     padding: EdgeInsets.fromLTRB(0, 20, 0, 2),
                     child: Column(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Padding(
                           padding: EdgeInsets.only(bottom:15),
@@ -271,6 +275,7 @@ class _Test extends State<IntroductoryExamScreen>{
                         ),
                         Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
                                       'Информация',

@@ -19,92 +19,96 @@ class _SignUpScreen extends State<SignUpScreen>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
-        child: Center(child:
-        Column(
-          children: [
-            Stack(children:
-            [
-              Align(alignment: Alignment.centerLeft,child: IconButton(
-                  icon: Icon(Icons.arrow_back_ios_outlined,size: 30),
-                  color: kPersonalBlue,
-                  onPressed:(){
-                    setState(() {
-                      Navigator.pop(context);
-                    });
-                  }
-              ),),
-              Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                  'M-space',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Formular',
-                      fontSize: 30,
-                      decoration: TextDecoration.underline)
-              ))]
-        ),
-            Padding(padding: EdgeInsets.fromLTRB(left, 40, right, 50),child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+      body: ListView(
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
+            child: Center(child:
+            Column(
               children: [
-                Text(
-                  "Регистрация",
-                  style: TextStyle(
-                      color: kPersonalBlack,
-                      fontSize: 22,
-                      fontFamily: 'Formular',
-                      fontWeight: FontWeight.bold
-                  )
-                  ,
-                )],)),
-            Padding(
-                padding: EdgeInsets.fromLTRB(left, 0, right, 20),
-                child:buildloginTextField()),
-            Padding(
-                padding: EdgeInsets.fromLTRB(left, 0, right, 10),
-                child:buildPasswordTextField()),
-            Padding(
-              padding: EdgeInsets.fromLTRB(left,40,right,20),
-              child: Container(
-              width: double.infinity,
-              height: 50,
-              child: ElevatedButton(
-                onPressed: (){
-                  setState(() {
-                    if(loginFieldController.text.isNotEmpty) {
-                      context
-                          .read<User>()
-                          .login = loginFieldController.text;
-                      if(passFieldController.text.isNotEmpty) {
-                        context
-                            .read<User>()
-                            .password = passFieldController.text;
-                        Navigator.pop(context);
-                      }else{passFieldController.clear();}
-                    }
-                  });
-                },
-                  child: Text(
-                      "Зарегистрироваться",
+                Stack(children:
+                [
+                  Align(alignment: Alignment.centerLeft,child: IconButton(
+                      icon: Icon(Icons.arrow_back_ios_outlined,size: 30),
+                      color: kPersonalBlue,
+                      onPressed:(){
+                        setState(() {
+                          Navigator.pop(context);
+                        });
+                      }
+                  ),),
+                  Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                          'M-space',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Formular',
+                              fontSize: 30,
+                              decoration: TextDecoration.underline)
+                      ))]
+                ),
+                Padding(padding: EdgeInsets.fromLTRB(left, 40, right, 50),child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Регистрация",
                       style: TextStyle(
-                          fontSize: 16,
-                        color: kPersonalWhite,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Formular'
+                          color: kPersonalBlack,
+                          fontSize: 22,
+                          fontFamily: 'Formular',
+                          fontWeight: FontWeight.bold
                       )
-                  ),
-                  style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                      backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                          )
-                      ))) ,),)
-          ],
-        )),
+                      ,
+                    )],)),
+                Padding(
+                    padding: EdgeInsets.fromLTRB(left, 0, right, 20),
+                    child:buildloginTextField()),
+                Padding(
+                    padding: EdgeInsets.fromLTRB(left, 0, right, 10),
+                    child:buildPasswordTextField()),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(left,40,right,20),
+                  child: Container(
+                    width: double.infinity,
+                    height: 50,
+                    child: ElevatedButton(
+                        onPressed: (){
+                          setState(() {
+                            if(loginFieldController.text.isNotEmpty) {
+                              context
+                                  .read<User>()
+                                  .login = loginFieldController.text;
+                              if(passFieldController.text.isNotEmpty) {
+                                context
+                                    .read<User>()
+                                    .password = passFieldController.text;
+                                Navigator.pop(context);
+                              }else{passFieldController.clear();}
+                            }
+                          });
+                        },
+                        child: Text(
+                            "Зарегистрироваться",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: kPersonalWhite,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Formular'
+                            )
+                        ),
+                        style: ButtonStyle(
+                            foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                            backgroundColor: MaterialStateProperty.all<Color>(kPersonalBlue),
+                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )
+                            ))) ,),)
+              ],
+            )),
+          )
+        ],
       ),
     );
   }

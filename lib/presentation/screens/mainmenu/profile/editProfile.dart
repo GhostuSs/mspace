@@ -16,59 +16,61 @@ class _EditProfileScreen extends State<EditProfileScreen>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(0, 100, 0, 40),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
-                child: Stack(
-                    children: [
-                      IconButton(onPressed:(){
-                        Navigator.pop(context);
-                      }, icon: Icon(Icons.arrow_back_ios,color: kPersonalBlack,size: 30,)),
-                      Center(child: Text(
-                          'Изменить профиль',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Formular',
-                              fontSize: 28,
-                              decorationStyle: TextDecorationStyle.solid)
-                      )),
-                    ]
-                )
+      body:
+          Padding(
+            padding: EdgeInsets.fromLTRB(0, 100, 0, 40),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                    padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+                    child: Stack(
+                        children: [
+                          IconButton(onPressed:(){
+                            Navigator.pop(context);
+                          }, icon: Icon(Icons.arrow_back_ios,color: kPersonalBlack,size: 30,)),
+                          Center(child: Text(
+                              'Изменить профиль',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Formular',
+                                  fontSize: 28,
+                                  decorationStyle: TextDecorationStyle.solid)
+                          )),
+                        ]
+                    )
+                ),
+                rawTextBtn('Как к вам обращаться'),
+                rawTextBtn('Ваше фото'),
+                rawTextBtn('Почта'),
+                rawTextBtn('Текущий класс'),
+                rawTextBtn('Класс поступления'),
+                rawTextBtn('Школа поступления'),
+                Spacer(),
+                Align(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: 20.0),
+                      child: TextButton(
+                          onPressed: (){
+                            setState(() {
+                              Navigator.pushNamed(context, "/auth");
+                            });
+                          },
+                          child: Text(
+                              'Выйти',
+                              style:
+                              TextStyle(
+                                  color:Color(0xFFFE1818),
+                                  fontFamily: 'Formular',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20)
+                          )),
+                    ))
+              ],
             ),
-            rawTextBtn('Как к вам обращаться'),
-            rawTextBtn('Ваше фото'),
-            rawTextBtn('Почта'),
-            rawTextBtn('Текущий класс'),
-            rawTextBtn('Класс поступления'),
-            rawTextBtn('Школа поступления'),
-            Spacer(),
-            Align(
-                alignment: Alignment.center,
-                child: Padding(
-                  padding: EdgeInsets.only(bottom: 20.0),
-                  child: TextButton(
-                      onPressed: (){
-                        setState(() {
-                          Navigator.pushNamed(context, "/auth");
-                        });
-                      },
-                      child: Text(
-                          'Выйти',
-                          style:
-                          TextStyle(
-                              color:Color(0xFFFE1818),
-                              fontFamily: 'Formular',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20)
-                      )),
-                ))
-          ],
-        ),
-      ),
+          )
     );
   }
 Widget rawTextBtn(String title){
