@@ -20,30 +20,36 @@ class _TrainingScreen extends State<IntroductoryClassScreen>{
             children: [
               Stack(
                 children: [
-                  Align(
-                    alignment: Alignment.center,
+                  IconButton(icon: Icon(Icons.arrow_back_ios),iconSize: 26, onPressed: (){setState(() {
+                    Navigator.pushNamed(context, '/training');
+                  });
+                  }),
+                  Align(alignment: Alignment.bottomCenter,child:
+                  Padding(
+                    padding: EdgeInsets.only(top: 9),
                     child: Text(
                       'Вступительная работа',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
-                          fontFamily:'Formular',
                           fontWeight: FontWeight.bold,
-                          fontSize: 28,
+                          fontFamily: 'Formular',
+                          fontSize: 26,
                           color: kPersonalBlack
                       ),
                     ),
-                  ),
+                  ))
                 ],
               ),
               SizedBox(height: 80),
               Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    RawBtn('5 класс', '/introvariant'),
-                    RawBtn('6 класс', '/introvariant'),
-                    RawBtn('7 класс', '/introvariant'),
-                    RawBtn('8 класс', '/introvariant'),
-                    RawBtn('9 класс', '/introvariant'),
-                    RawBtn('10 класс', '/introvariant'),
+                    RawBtn('5 класс', '/introschoolyear'),
+                    RawBtn('6 класс', '/introschoolyear'),
+                    RawBtn('7 класс', '/introschoolyear'),
+                    RawBtn('8 класс', '/introschoolyear'),
+                    RawBtn('9 класс', '/introschoolyear'),
+                    RawBtn('10 класс', '/introschoolyear'),
                   ],
               )
 

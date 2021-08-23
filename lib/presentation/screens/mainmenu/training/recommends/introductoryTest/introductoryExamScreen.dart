@@ -18,7 +18,7 @@ class _Test extends State<IntroductoryExamScreen>{
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body:ListView(
+      body:Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.start,

@@ -10,7 +10,6 @@ class RecommendsScreen extends StatefulWidget{
 }
 class _RecommendsScreen extends State<RecommendsScreen>{
   var textFieldController = TextEditingController();
-  var _answer;
   String exercise = "С января по июнь 46200 иммигрантов подали на гражданство. А в прошлом году за этот же период заявки подали 120000 иммигрантов. На сколько процентов уменьшилось количество заявок? В ответе укажите только число.";
   @override
   Widget build(BuildContext context) {
@@ -104,7 +103,6 @@ class _RecommendsScreen extends State<RecommendsScreen>{
                             controller: textFieldController,
                             autofocus: true,
                             onChanged: (str){
-                              _answer=textFieldController.text;
                             }
                         )
                     ),
@@ -194,14 +192,6 @@ class _RecommendsScreen extends State<RecommendsScreen>{
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(top:20),
-                    child: Container(
-                        height: 3.5,
-                        width: 60,
-                        color: Colors.grey.withOpacity(0.6)
-                    ),
-                  ),
                   Padding(
                       padding: EdgeInsets.fromLTRB(0, 20, 0, 10),
                       child: Row(

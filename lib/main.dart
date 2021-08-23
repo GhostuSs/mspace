@@ -19,6 +19,7 @@ import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recomme
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/introductoryClassScreen.dart';
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/introductorySchoolScreen.dart';
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/introductoryExamScreen.dart';
+import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/introductoryYearScreen.dart';
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/introductoryYearTestScreen.dart';
 import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/introductoryTest/introductoryYearTestVariantsScreen.dart';
 import 'package:flutter/material.dart';
@@ -55,6 +56,7 @@ void main() {
           "/filtertheme":(BuildContext context) => ThemeFilterScreen(),
           '/introclass' : (BuildContext context) => IntroductoryClassScreen(),
           '/introschool' : (BuildContext context) => IntroductorySchoolScreen(),
+          '/introschoolyear' : (BuildContext context) => IntroductoryYearScreen(),
           '/introyear' : (BuildContext context) => IntroductoryYearTestScreen(),
           '/introvariant' : (BuildContext context) => IntroductoryTestVariantScreen(),
           '/introexam' : (BuildContext context) => IntroductoryExamScreen(),

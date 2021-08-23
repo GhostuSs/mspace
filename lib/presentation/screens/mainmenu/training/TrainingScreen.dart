@@ -1,6 +1,4 @@
 import 'package:enroll_spb_luxury/constants/colorsPallette.dart';
-import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/archiveOfExercises/listExcercisesScreen.dart';
-import 'package:enroll_spb_luxury/presentation/screens/mainmenu/training/recommends/RecommendsScreen.dart';
 import 'package:flutter/material.dart';
 
 class TrainingScreen extends StatefulWidget{
@@ -139,4 +137,3 @@ class _TrainingScreen extends State<TrainingScreen>{
     );
   }
 }
-void main()=>runApp(MaterialApp(home: RecommendsScreen()));
