@@ -25,6 +25,10 @@ class _MainMenuScreen extends State<MainMenuScreen>{
     ];
     return CupertinoPageScaffold(
       child: CupertinoTabScaffold(
+        tabBuilder: (BuildContext context,index){
+
+              return _routes[index];
+        },
         tabBar: CupertinoTabBar(
           items: [
             BottomNavigationBarItem(
@@ -63,10 +67,6 @@ class _MainMenuScreen extends State<MainMenuScreen>{
             ),//Профиль
           ],
         ),
-        // ignore: missing_return
-        tabBuilder: (BuildContext context,index){
-              return _routes[index];
-        },
       ));
   }
 }

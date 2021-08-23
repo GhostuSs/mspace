@@ -28,16 +28,19 @@ class _FullAnswerScreen extends State<FullAnswerScreen>{
                           padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
                           child: Stack(
                             children: [
-                              Align(alignment: Alignment.bottomCenter,child: Text(
-                                'Решение',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'Formular',
-                                    fontSize: 30,
-                                    color: kPersonalBlack
-                                ),
-                              ),),
+                              Padding(
+                                padding: EdgeInsets.only(top:6),
+                                child: Center(child: Text(
+                                  'Решение',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Formular',
+                                      fontSize: 30,
+                                      color: kPersonalBlack
+                                  ),
+                                )),
+                              ),
                               Align(alignment: Alignment.bottomLeft,child: IconButton(icon: Icon(Icons.arrow_back_ios), onPressed: (){
                                 setState(() {
                                   Navigator.pop(context);

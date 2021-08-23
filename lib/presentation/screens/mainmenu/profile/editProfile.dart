@@ -28,16 +28,19 @@ class _EditProfileScreen extends State<EditProfileScreen>{
                     child: Stack(
                         children: [
                           IconButton(onPressed:(){
-                            Navigator.pop(context);
-                          }, icon: Icon(Icons.arrow_back_ios,color: kPersonalBlack,size: 30,)),
-                          Center(child: Text(
+                              Navigator.pop(context);
+                            }, icon: Icon(Icons.arrow_back_ios,color: kPersonalBlack,size: 30,)),
+                          Padding(
+                            padding: EdgeInsets.only(top: 7),
+                          child: Center(child: Text(
                               'Изменить профиль',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Formular',
                                   fontSize: 28,
                                   decorationStyle: TextDecorationStyle.solid)
-                          )),
+                          ))
+                          ),
                         ]
                     )
                 ),
